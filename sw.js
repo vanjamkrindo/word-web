@@ -1,5 +1,5 @@
 // Service worker Word Web: cache penuh agar bisa dipakai offline & terpasang sebagai APK/PWA
-const CACHE = 'word-web-v1';
+const CACHE = 'word-web-v2-en';
 const ASSETS = [
   './', './index.html', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png'
