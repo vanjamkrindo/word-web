@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light" data-canvas="light" data-view="print">
+<html lang="en" data-theme="light" data-canvas="light" data-view="print">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
-<title>Dokumen — Word Web</title>
+<title>Document — Word Web</title>
 <style>
   :root{
     --accent:#185abd; --accent-2:#0f4a9e; --accent-soft:#e7eefb; --accent-line:#c3d4f2;
@@ -270,7 +270,7 @@
     font:9.5px/1 "Segoe UI",Arial,sans-serif;padding:0 5px;
   }
   .paper .colbreak{height:0;border-top:1px dashed #d8b4b4;margin:12pt 0;position:relative}
-  .paper .colbreak::after{content:"Hentian kolom";position:absolute;right:0;top:-8px;background:#fff;color:#b08a8a;font:9px/1 "Segoe UI",Arial;padding:0 4px}
+  .paper .colbreak::after{content:"Hentian columns";position:absolute;right:0;top:-8px;background:#fff;color:#b08a8a;font:9px/1 "Segoe UI",Arial;padding:0 4px}
 
   /* styles */
   .paper .st-title{font-size:26pt;font-weight:400;letter-spacing:-.2px;margin:0 0 4pt;line-height:1.15}
@@ -578,7 +578,7 @@
       <button class="tb-ico" data-action="autoSave" id="autoSaveBtn" title="Simpan otomatis aktif">
         <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
       </button>
-      <span class="save-state" id="saveState">Tersimpan</span>
+      <span class="save-state" id="saveState">Saved</span>
     </div>
     <div class="doc-title"><input id="docName" value="Dokumen Tanpa Judul" spellcheck="false" aria-label="Nama dokumen"></div>
     <div class="tb-right">
@@ -586,7 +586,7 @@
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.6-4.6"/></svg>
         <input id="quickFind" placeholder="Cari di dokumen" aria-label="Cari">
       </label>
-      <button class="tb-ico" data-action="newComment" title="Komentar baru">
+      <button class="tb-ico" data-action="newComment" title="Comment baru">
         <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H8l-5 3 1.4-4.2A8 8 0 1 1 21 12z"/></svg>
       </button>
       <button class="tb-ico" data-action="toggleTrack" title="Lacak perubahan">
@@ -597,23 +597,23 @@
   </header>
 
   <nav class="tabs" id="tabs">
-    <button class="tab file" data-tab="file">Berkas</button>
-    <button class="tab active" data-tab="home">Beranda</button>
-    <button class="tab" data-tab="insert">Sisipkan</button>
-    <button class="tab" data-tab="design">Desain</button>
-    <button class="tab" data-tab="layout">Tata Letak</button>
-    <button class="tab" data-tab="refs">Referensi</button>
-    <button class="tab" data-tab="mail">Surat</button>
-    <button class="tab" data-tab="review">Tinjau</button>
-    <button class="tab" data-tab="view">Tampilan</button>
+    <button class="tab file" data-tab="file">File</button>
+    <button class="tab active" data-tab="home">Home</button>
+    <button class="tab" data-tab="insert">Insert</button>
+    <button class="tab" data-tab="design">Design</button>
+    <button class="tab" data-tab="layout">Layout</button>
+    <button class="tab" data-tab="refs">References</button>
+    <button class="tab" data-tab="mail">Mailings</button>
+    <button class="tab" data-tab="review">Review</button>
+    <button class="tab" data-tab="view">Views</button>
   </nav>
 
   <div id="ribbon"></div>
 
   <div class="workspace" id="workspace">
     <aside class="sidepane left" id="navPane">
-      <div class="pane-head"><span>Navigasi</span><button class="x" data-action="toggleNav">✕</button></div>
-      <input id="navSearch" placeholder="Cari judul atau teks…" spellcheck="false">
+      <div class="pane-head"><span>Navigation</span><button class="x" data-action="toggleNav">✕</button></div>
+      <input id="navSearch" placeholder="Cari headings atau teks…" spellcheck="false">
       <div class="nav-list" id="navList"></div>
     </aside>
 
@@ -621,11 +621,11 @@
       <div class="ruler-row" id="rulerRow"><div class="ruler" id="ruler"></div></div>
       <div class="page" id="page">
         <div class="sheets" id="sheets" aria-hidden="true"></div>
-        <div class="watermark" id="watermark"><span id="watermarkText">DRAF</span></div>
+        <div class="watermark" id="watermark"><span id="watermarkText">DRAFT</span></div>
         <div class="page-border" id="pageBorder"></div>
-        <div class="hf hf-top off" id="docHeader" contenteditable="true" data-ph="Header — klik untuk mengetik"></div>
-        <div class="paper" id="editor" contenteditable="true" spellcheck="true" lang="id"></div>
-        <div class="hf hf-bottom off" id="docFooter" contenteditable="true" data-ph="Footer — klik untuk mengetik"></div>
+        <div class="hf hf-top off" id="docHeader" contenteditable="true" data-ph="Header - click to type"></div>
+        <div class="paper" id="editor" contenteditable="true" spellcheck="true" lang="en"></div>
+        <div class="hf hf-bottom off" id="docFooter" contenteditable="true" data-ph="Footer — click to type"></div>
       </div>
     </div>
 
@@ -636,9 +636,9 @@
   </div>
 
   <footer class="statusbar">
-    <span class="stat" id="statPage" data-action="wordCount">Halaman 1 dari 1</span>
-    <span class="stat" id="statWords" data-action="wordCount">0 kata</span>
-    <span class="stat" id="statLang" data-action="setLang">Bahasa Indonesia</span>
+    <span class="stat" id="statPage" data-action="wordCount">Page 1 of 1</span>
+    <span class="stat" id="statWords" data-action="wordCount">0 words</span>
+    <span class="stat" id="statLang" data-action="setLang">English</span>
     <span class="grow"></span>
     <span class="chip hidden" id="statTrack">Lacak perubahan</span>
     <div class="viewbtns">
@@ -658,16 +658,16 @@
 <div id="backstage" class="hidden"></div>
 
 <div class="floatbar" id="tableBar">
-  <button class="mini" data-table="rowAbove">+ Baris ↑</button>
-  <button class="mini" data-table="rowBelow">+ Baris ↓</button>
-  <button class="mini" data-table="colLeft">+ Kolom ←</button>
-  <button class="mini" data-table="colRight">+ Kolom →</button>
+  <button class="mini" data-table="rowAbove">+ Row ↑</button>
+  <button class="mini" data-table="rowBelow">+ Row ↓</button>
+  <button class="mini" data-table="colLeft">+ Column ←</button>
+  <button class="mini" data-table="colRight">+ Column →</button>
   <button class="mini" data-table="merge">Gabung</button>
   <button class="mini" data-table="split">Pisah</button>
-  <button class="mini" data-table="delRow">− Baris</button>
-  <button class="mini" data-table="delCol">− Kolom</button>
+  <button class="mini" data-table="delRow">− Row</button>
+  <button class="mini" data-table="delCol">− Column</button>
   <button class="mini" data-table="header">Header</button>
-  <button class="mini" data-table="delTable">Hapus tabel</button>
+  <button class="mini" data-table="delTable">Delete table</button>
 </div>
 
 <div class="floatbar" id="imgBar">
@@ -680,8 +680,8 @@
   <button class="mini" data-obj="center">Tengah</button>
   <button class="mini" data-obj="right">Kanan</button>
   <span style="width:1px;height:16px;background:var(--border)"></span>
-  <button class="mini" data-obj="caption">Keterangan</button>
-  <button class="mini" data-obj="del">Hapus</button>
+  <button class="mini" data-obj="caption">Caption</button>
+  <button class="mini" data-obj="del">Delete</button>
 </div>
 
 <div class="floatbar" id="miniBar"></div>
@@ -692,10 +692,10 @@
   <div class="row"><input type="text" id="replInput" placeholder="Ganti dengan…"></div>
   <div class="row">
     <label class="chk"><input type="checkbox" id="findCase">A/a</label>
-    <label class="chk"><input type="checkbox" id="findWord">Kata utuh</label>
+    <label class="chk"><input type="checkbox" id="findWord">Match case</label>
     <button class="mini" id="findPrev">↑</button>
     <button class="mini" id="findNext">↓</button>
-    <button class="mini" id="replaceOne">Ganti</button>
+    <button class="mini" id="replaceOne">Replace</button>
     <button class="mini" id="replaceAll">Semua</button>
     <button class="mini" id="findClose" style="margin-left:auto">✕</button>
   </div>
@@ -714,6 +714,7 @@
 <script>
 (function(){
 'use strict';
+
 /* =========================================================================
    CORE — helpers, icons, ribbon, commands, persistence, page setup
    ========================================================================= */
@@ -898,7 +899,7 @@ function openDialog(opt){
     ok.onclick = () => {
       let res;
       try{ res = opt.onOk ? opt.onOk($('#dlgBody')) : undefined; }
-      catch(err){ console.error(err); toast('Gagal: ' + err.message); return; }
+      catch(err){ console.error(err); toast('Failed: ' + err.message); return; }
       if(res === false) return;
       dlg.close();
       // DOM outside a modal dialog is inert: run insertions after it closes
@@ -992,16 +993,16 @@ const FONTS = ['Calibri','Cambria','Arial','Times New Roman','Georgia','Garamond
 const SIZES = [8,9,10,10.5,11,12,14,16,18,20,22,24,26,28,32,36,48,72,96];
 const STYLES = [
   { id:'normal',   name:'Normal',        tag:'p',          cls:'' },
-  { id:'nospace',  name:'Tanpa spasi',   tag:'p',          cls:'st-nospace' },
-  { id:'title',    name:'Judul',         tag:'p',          cls:'st-title' },
-  { id:'subtitle', name:'Subjudul',      tag:'p',          cls:'st-subtitle' },
-  { id:'h1',       name:'Judul 1',       tag:'h1',         cls:'' },
-  { id:'h2',       name:'Judul 2',       tag:'h2',         cls:'' },
-  { id:'h3',       name:'Judul 3',       tag:'h3',         cls:'' },
-  { id:'quote',    name:'Kutipan',       tag:'blockquote', cls:'' },
-  { id:'intense',  name:'Kutipan intens',tag:'p',          cls:'st-intense' },
-  { id:'code',     name:'Kode',          tag:'pre',        cls:'st-code' },
-  { id:'caption',  name:'Keterangan',    tag:'p',          cls:'st-caption' }
+  { id:'nospace',  name:'No Spacing',   tag:'p',          cls:'st-nospace' },
+  { id:'title',    name:'Title',         tag:'p',          cls:'st-title' },
+  { id:'subtitle', name:'Subtitle',      tag:'p',          cls:'st-subtitle' },
+  { id:'h1',       name:'Heading 1',       tag:'h1',         cls:'' },
+  { id:'h2',       name:'Heading 2',       tag:'h2',         cls:'' },
+  { id:'h3',       name:'Heading 3',       tag:'h3',         cls:'' },
+  { id:'quote',    name:'Quote',       tag:'blockquote', cls:'' },
+  { id:'intense',  name:'Intense Quote',tag:'p',          cls:'st-intense' },
+  { id:'code',     name:'Code',          tag:'pre',        cls:'st-code' },
+  { id:'caption',  name:'Caption',    tag:'p',          cls:'st-caption' }
 ];
 
 const THEMES = [
@@ -1012,11 +1013,11 @@ const THEMES = [
   { id:'basic',  name:'Basic',  accent:'#3b3b3b', ink:'#111111', font:'Arial', head:'Arial' }
 ];
 const PALETTES = [
-  { id:'biru', name:'Biru', colors:['#185abd','#2e75d4','#8ab4f8','#d7e6fb','#0b2e59'] },
-  { id:'hijau', name:'Hijau', colors:['#0b6a5b','#2e9e7e','#8fd6c0','#dff3ec','#073b33'] },
-  { id:'oranye', name:'Oranye', colors:['#b45309','#e08a2e','#f6c98a','#fdeed8','#5c2a05'] },
-  { id:'ungu', name:'Ungu', colors:['#6b21a8','#9a55d4','#d0b4ee','#f1e6fb','#34104f'] },
-  { id:'merah', name:'Merah', colors:['#b3261e','#d9534f','#f2a9a5','#fbe4e2','#5c120d'] }
+  { id:'biru', name:'Blue', colors:['#185abd','#2e75d4','#8ab4f8','#d7e6fb','#0b2e59'] },
+  { id:'hijau', name:'Green', colors:['#0b6a5b','#2e9e7e','#8fd6c0','#dff3ec','#073b33'] },
+  { id:'oranye', name:'Orange', colors:['#b45309','#e08a2e','#f6c98a','#fdeed8','#5c2a05'] },
+  { id:'ungu', name:'Purple', colors:['#6b21a8','#9a55d4','#d0b4ee','#f1e6fb','#34104f'] },
+  { id:'merah', name:'Red', colors:['#b3261e','#d9534f','#f2a9a5','#fbe4e2','#5c120d'] }
 ];
 const FONT_PAIRS = [
   { id:'calibri', name:'Calibri', body:'Calibri', head:'Calibri Light' },
@@ -1038,250 +1039,241 @@ function styleCards(){
 
 const RIBBON = [
   pane('home', [
-    group('Papan klip', [
-      btn({ icon:'paste', action:'paste', title:'Tempel (Ctrl+V)' }),
-      btn({ icon:'cut', cmd:'cut', title:'Potong (Ctrl+X)' }),
-      btn({ icon:'copy', cmd:'copy', title:'Salin (Ctrl+C)' }),
-      btn({ icon:'painter', action:'formatPainter', title:'Peniru format — salin format ke teks lain' })
+    group('Clipboard', [
+      btn({ icon:'paste', action:'paste', title:'Paste (Ctrl+V)' }),
+      btn({ icon:'cut', cmd:'cut', title:'Cut (Ctrl+X)' }),
+      btn({ icon:'copy', cmd:'copy', title:'Copy (Ctrl+C)' }),
+      btn({ icon:'painter', action:'formatPainter', title:'Format Painter' })
     ]),
     group('Font', [
-      sel({ id:'fontName', w:112, title:'Jenis huruf', opts:FONTS.map(f => [f, f]) }),
-      sel({ id:'fontSize', w:56, title:'Ukuran huruf', opts:SIZES.map(s => [s, String(s)]) }),
-      btn({ icon:'grow', action:'growFont', title:'Perbesar huruf' }),
-      btn({ icon:'shrink', action:'shrinkFont', title:'Perkecil huruf' }),
-      btn({ icon:'bold', cmd:'bold', title:'Tebal (Ctrl+B)' }),
-      btn({ icon:'italic', cmd:'italic', title:'Miring (Ctrl+I)' }),
-      btn({ icon:'underline', action:'underlineMenu', split:true, title:'Garis bawah' }),
-      btn({ icon:'strike', cmd:'strikeThrough', title:'Coret' }),
-      btn({ icon:'sub', cmd:'subscript', title:'Subskrip' }),
-      btn({ icon:'sup', cmd:'superscript', title:'Superskrip' }),
-      btn({ icon:'effects', action:'textEffects', split:true, title:'Efek teks' }),
-      colorBtn({ id:'foreColor', icon:'color', value:'#c0392b', title:'Warna teks' }),
-      colorBtn({ id:'hilite', icon:'highlight', value:'#ffe680', title:'Sorot teks' }),
-      btn({ icon:'case', action:'caseMenu', split:true, title:'Ubah huruf besar/kecil' }),
-      btn({ icon:'clear', cmd:'removeFormat', title:'Hapus semua format' })
+      sel({ id:'fontName', w:118, title:'Font', opts:FONTS.map(f => [f, f]) }),
+      sel({ id:'fontSize', w:56, title:'Font Size', opts:SIZES.map(s => [s, String(s)]) }),
+      btn({ icon:'grow', action:'growFont', title:'Increase Font Size' }),
+      btn({ icon:'shrink', action:'shrinkFont', title:'Decrease Font Size' }),
+      btn({ icon:'bold', cmd:'bold', title:'Bold (Ctrl+B)' }),
+      btn({ icon:'italic', cmd:'italic', title:'Italic (Ctrl+I)' }),
+      btn({ icon:'underline', action:'underlineMenu', split:true, title:'Underline' }),
+      btn({ icon:'strike', cmd:'strikeThrough', title:'Strikethrough' }),
+      btn({ icon:'sub', cmd:'subscript', title:'Subscript' }),
+      btn({ icon:'sup', cmd:'superscript', title:'Superscript' }),
+      btn({ icon:'effects', action:'textEffects', split:true, title:'Text Effects and Typography' }),
+      colorBtn({ id:'foreColor', icon:'color', value:'#c0392b', title:'Font Color' }),
+      colorBtn({ id:'hilite', icon:'highlight', value:'#ffe680', title:'Text Highlight Color' }),
+      btn({ icon:'case', action:'caseMenu', split:true, title:'Change Case' }),
+      btn({ icon:'clear', cmd:'removeFormat', title:'Clear All Formatting' })
     ]),
-    group('Paragraf', [
-      btn({ icon:'bullets', action:'bulletMenu', split:true, title:'Daftar butir' }),
-      btn({ icon:'numbering', action:'numberMenu', split:true, title:'Daftar bernomor' }),
-      btn({ icon:'multilevel', action:'multilevelList', title:'Daftar bertingkat' }),
-      btn({ icon:'outdent', cmd:'outdent', title:'Kurangi indentasi' }),
-      btn({ icon:'indent', cmd:'indent', title:'Tambah indentasi' }),
-      btn({ icon:'sort', action:'sortMenu', split:true, title:'Urutkan paragraf' }),
-      btn({ icon:'marks', action:'toggleMarks', title:'Tampilkan tanda format (¶)' }),
-      btn({ icon:'alignL', cmd:'justifyLeft', title:'Rata kiri' }),
-      btn({ icon:'alignC', cmd:'justifyCenter', title:'Rata tengah' }),
-      btn({ icon:'alignR', cmd:'justifyRight', title:'Rata kanan' }),
-      btn({ icon:'alignJ', cmd:'justifyFull', title:'Rata kanan-kiri' }),
-      btn({ icon:'spacing', action:'lineSpacing', split:true, title:'Jarak baris' }),
-      colorBtn({ id:'paraShade', icon:'shading', value:'#f1f4f8', title:'Warna latar paragraf' }),
-      btn({ icon:'borders', action:'bordersMenu', split:true, title:'Batas paragraf' })
+    group('Paragraph', [
+      btn({ icon:'bullets', action:'bulletMenu', split:true, title:'Bullets' }),
+      btn({ icon:'numbering', action:'numberMenu', split:true, title:'Numbering' }),
+      btn({ icon:'multilevel', action:'multilevelList', title:'Multilevel List' }),
+      btn({ icon:'outdent', cmd:'outdent', title:'Decrease Indent' }),
+      btn({ icon:'indent', cmd:'indent', title:'Increase Indent' }),
+      btn({ icon:'sort', action:'sortMenu', split:true, title:'Sort' }),
+      btn({ icon:'marks', action:'toggleMarks', title:'Show/Hide \u00b6' }),
+      btn({ icon:'alignL', cmd:'justifyLeft', title:'Align Left (Ctrl+L)' }),
+      btn({ icon:'alignC', cmd:'justifyCenter', title:'Center (Ctrl+E)' }),
+      btn({ icon:'alignR', cmd:'justifyRight', title:'Align Right (Ctrl+R)' }),
+      btn({ icon:'alignJ', cmd:'justifyFull', title:'Justify (Ctrl+J)' }),
+      btn({ icon:'spacing', action:'lineSpacing', split:true, title:'Line and Paragraph Spacing' }),
+      colorBtn({ id:'paraShade', icon:'shading', value:'#f1f4f8', title:'Shading' }),
+      btn({ icon:'borders', action:'bordersMenu', split:true, title:'Borders' })
     ]),
-    group('Gaya', [
+    group('Styles', [
       styleCards(),
-      btn({ icon:'chevron', action:'stylePane', label:'Lainnya', title:'Semua gaya' })
+      btn({ icon:'chevron', action:'stylePane', label:'More', title:'Styles pane' })
     ]),
-    group('Edit', [
-      btn({ icon:'find', action:'find', title:'Cari (Ctrl+F)' }),
-      btn({ icon:'replace', action:'replace', title:'Ganti (Ctrl+H)' }),
-      btn({ icon:'selectAll', action:'selectAll', title:'Pilih semua (Ctrl+A)' }),
-      btn({ icon:'undo', cmd:'undo', title:'Urungkan (Ctrl+Z)' }),
-      btn({ icon:'redo', cmd:'redo', title:'Ulangi (Ctrl+Y)' })
+    group('Editing', [
+      btn({ icon:'find', action:'find', title:'Find (Ctrl+F)' }),
+      btn({ icon:'replace', action:'replace', title:'Replace (Ctrl+H)' }),
+      btn({ icon:'selectAll', action:'selectAll', title:'Select All (Ctrl+A)' }),
+      btn({ icon:'undo', cmd:'undo', title:'Undo (Ctrl+Z)' }),
+      btn({ icon:'redo', cmd:'redo', title:'Redo (Ctrl+Y)' })
     ])
   ], 'active'),
 
   pane('insert', [
-    group('Halaman', [
-      btn({ icon:'cover', action:'coverPage', label:'Sampul', big:true, title:'Halaman sampul' }),
-      btn({ icon:'blankPage', action:'blankPage', label:'Kosong', big:true, title:'Sisipkan halaman kosong' }),
-      btn({ icon:'pageBreak', action:'pageBreak', label:'Hentian', big:true, title:'Hentian halaman' })
+    group('Pages', [
+      btn({ icon:'cover', action:'coverPage', label:'Cover Page', big:true, title:'Insert a cover page' }),
+      btn({ icon:'blankPage', action:'blankPage', label:'Blank Page', big:true, title:'Insert a blank page' }),
+      btn({ icon:'pageBreak', action:'pageBreak', label:'Page Break', big:true, title:'Insert a page break' })
     ]),
-    group('Tabel', [
-      btn({ icon:'table', action:'tableMenu', label:'Tabel', big:true, title:'Sisipkan tabel' })
+    group('Tables', [
+      btn({ icon:'table', action:'tableMenu', label:'Table', big:true, title:'Insert a table' })
     ]),
-    group('Ilustrasi', [
-      btn({ icon:'image', action:'image', label:'Gambar', big:true, title:'Sisipkan gambar' }),
-      btn({ icon:'shapes', action:'shapesMenu', label:'Bentuk', big:true, title:'Sisipkan bentuk' }),
-      btn({ icon:'chart', action:'chart', label:'Bagan', big:true, title:'Sisipkan bagan' }),
-      btn({ icon:'icons', action:'iconsMenu', label:'Ikon', big:true, title:'Sisipkan ikon' })
+    group('Illustrations', [
+      btn({ icon:'image', action:'image', label:'Pictures', big:true, title:'Insert a picture' }),
+      btn({ icon:'shapes', action:'shapesMenu', label:'Shapes', big:true, title:'Insert shapes' }),
+      btn({ icon:'chart', action:'chart', label:'Chart', big:true, title:'Insert a chart' }),
+      btn({ icon:'icons', action:'iconsMenu', label:'Icons', big:true, title:'Insert icons' })
     ]),
-    group('Tautan', [
-      btn({ icon:'link', action:'link', label:'Tautan', big:true, title:'Sisipkan tautan (Ctrl+K)' }),
-      btn({ icon:'bookmark', action:'bookmark', label:'Penanda', big:true, title:'Sisipkan penanda' })
+    group('Links', [
+      btn({ icon:'link', action:'link', label:'Link', big:true, title:'Insert a link (Ctrl+K)' }),
+      btn({ icon:'bookmark', action:'bookmark', label:'Bookmark', big:true, title:'Insert a bookmark' })
     ]),
-    group('Komentar', [
-      btn({ icon:'comment', action:'newComment', label:'Komentar', big:true, title:'Komentar baru' })
+    group('Comments', [
+      btn({ icon:'comment', action:'newComment', label:'Comment', big:true, title:'New comment' })
     ]),
     group('Header & Footer', [
-      btn({ icon:'header', action:'toggleHeader', label:'Header', big:true, title:'Aktifkan header' }),
-      btn({ icon:'footer', action:'toggleFooter', label:'Footer', big:true, title:'Aktifkan footer' }),
-      btn({ icon:'pageNumber', action:'pageNumber', label:'Nomor', big:true, title:'Nomor halaman' })
+      btn({ icon:'header', action:'toggleHeader', label:'Header', big:true, title:'Edit the header' }),
+      btn({ icon:'footer', action:'toggleFooter', label:'Footer', big:true, title:'Edit the footer' }),
+      btn({ icon:'pageNumber', action:'pageNumber', label:'Page Number', big:true, title:'Insert page numbers' })
     ]),
-    group('Teks', [
-      btn({ icon:'textbox', action:'textBox', label:'Kotak teks', big:true, title:'Kotak teks' }),
-      btn({ icon:'wordart', action:'wordArt', label:'WordArt', big:true, title:'WordArt' }),
-      btn({ icon:'dropcap', action:'dropCap', label:'Drop cap', big:true, title:'Huruf awal besar' }),
-      btn({ icon:'equation', action:'equation', label:'Persamaan', big:true, title:'Persamaan' }),
-      btn({ icon:'symbol', action:'symbolMenu', split:true, label:'Simbol', big:true, title:'Simbol' }),
-      btn({ icon:'date', action:'insertDate', label:'Tanggal', big:true, title:'Tanggal hari ini' }),
-      btn({ icon:'footnote', action:'footnote', label:'Catatan kaki', big:true, title:'Catatan kaki' })
+    group('Text', [
+      btn({ icon:'textbox', action:'textBox', label:'Text Box', big:true, title:'Insert a text box' }),
+      btn({ icon:'wordart', action:'wordArt', label:'WordArt', big:true, title:'Insert WordArt' }),
+      btn({ icon:'dropcap', action:'dropCap', label:'Drop Cap', big:true, title:'Insert a drop cap' }),
+      btn({ icon:'equation', action:'equation', label:'Equation', big:true, title:'Insert an equation' }),
+      btn({ icon:'symbol', action:'symbolMenu', split:true, label:'Symbol', big:true, title:'Insert a symbol' }),
+      btn({ icon:'date', action:'insertDate', label:'Date & Time', big:true, title:'Insert the current date' }),
+      btn({ icon:'footnote', action:'footnote', label:'Footnote', big:true, title:'Insert a footnote' })
     ])
   ]),
 
   pane('design', [
-    group('Tema', THEMES.map(t =>
-      '<button type="button" class="rb big" data-theme-id="' + t.id + '" title="Tema ' + t.name + '">'
+    group('Document Formatting', THEMES.map(t =>
+      '<button type="button" class="rb big" data-theme-id="' + t.id + '" title="' + t.name + ' theme">'
       + '<span class="ico" style="background:' + t.accent + ';color:#fff;border-radius:4px;font-size:10px;font-weight:700;width:22px;height:22px;display:grid;place-items:center">Aa</span>'
       + '<span class="lbl">' + t.name + '</span></button>'
     )),
-    group('Warna', PALETTES.map(p =>
-      '<button type="button" class="rb big" data-palette="' + p.id + '" title="Palet ' + p.name + '">'
+    group('Colors', PALETTES.map(p =>
+      '<button type="button" class="rb big" data-palette="' + p.id + '" title="' + p.name + ' palette">'
       + '<span class="ico" style="display:flex;gap:1px;width:26px;height:22px;align-items:center">'
       + p.colors.map(c => '<i style="flex:1;height:14px;background:' + c + ';display:block;border-radius:1px"></i>').join('')
       + '</span><span class="lbl">' + p.name + '</span></button>'
     )),
-    group('Font', FONT_PAIRS.map(f =>
+    group('Fonts', FONT_PAIRS.map(f =>
       '<button type="button" class="rb big" data-fontpair="' + f.id + '" title="' + f.name + '">'
       + '<span class="ico" style="font-family:' + f.head + ';font-weight:600;font-size:15px;width:22px;height:22px">Aa</span>'
       + '<span class="lbl">' + f.name + '</span></button>'
     )),
-    group('Spasi paragraf', [
-      btn({ icon:'paraSpacing', action:'spacingTight', label:'Rapat', big:true, title:'Spasi rapat' }),
-      btn({ icon:'paraSpacing', action:'spacingNormal', label:'Normal', big:true, title:'Spasi normal' }),
-      btn({ icon:'paraSpacing', action:'spacingLoose', label:'Longgar', big:true, title:'Spasi longgar' })
+    group('Paragraph Spacing', [
+      btn({ icon:'paraSpacing', action:'spacingTight', label:'No Spacing', big:true, title:'Tight paragraph spacing' }),
+      btn({ icon:'paraSpacing', action:'spacingNormal', label:'Normal', big:true, title:'Normal paragraph spacing' }),
+      btn({ icon:'paraSpacing', action:'spacingLoose', label:'Relaxed', big:true, title:'Loose paragraph spacing' })
     ]),
-    group('Latar halaman', [
-      btn({ icon:'watermark', action:'watermark', label:'Watermark', big:true, title:'Watermark' }),
-      colorBtn({ id:'pageColor', icon:'pageColor', value:'#ffffff', title:'Warna halaman' }),
-      btn({ icon:'pageBorder', action:'pageBorderMenu', split:true, label:'Batas', big:true, title:'Batas halaman' })
+    group('Page Background', [
+      btn({ icon:'watermark', action:'watermark', label:'Watermark', big:true, title:'Insert a watermark' }),
+      colorBtn({ id:'pageColor', icon:'pageColor', value:'#ffffff', title:'Page Color' }),
+      btn({ icon:'pageBorder', action:'pageBorderMenu', split:true, label:'Page Borders', big:true, title:'Page borders' })
     ])
   ]),
 
   pane('layout', [
-    group('Margin', [
-      sel({ id:'margin', w:96, title:'Margin', opts:[['normal','Normal'],['narrow','Sempit'],['moderate','Sedang'],['wide','Lebar'],['mirror','Cermin']] }),
-      btn({ icon:'margin', action:'customMargin', label:'Khusus', big:true, title:'Margin khusus' })
+    group('Page Setup', [
+      sel({ id:'margin', w:96, title:'Margins', opts:[['normal','Normal'],['narrow','Narrow'],['moderate','Moderate'],['wide','Wide'],['mirror','Mirrored']] }),
+      btn({ icon:'margin', action:'customMargin', label:'Custom Margins', big:true, title:'Custom margins' }),
+      btn({ icon:'portrait', action:'portrait', label:'Portrait', big:true, title:'Portrait orientation' }),
+      btn({ icon:'landscape', action:'landscape', label:'Landscape', big:true, title:'Landscape orientation' }),
+      sel({ id:'pageSize', w:104, title:'Paper Size', opts:[['a4','A4'],['letter','Letter'],['legal','Legal'],['a5','A5'],['custom','Custom...']] }),
+      btn({ icon:'columns', action:'columnsMenu', split:true, label:'Columns', big:true, title:'Text columns' }),
+      btn({ icon:'pageBreak', action:'pageBreak', label:'Breaks', big:true, title:'Insert page break' }),
+      btn({ icon:'breaks', action:'columnBreak', label:'Column Break', big:true, title:'Insert column break' }),
+      btn({ icon:'lineNumbers', action:'toggleLineNumbers', label:'Line Numbers', big:true, title:'Line numbers' }),
+      btn({ icon:'hyphenation', action:'toggleHyphen', label:'Hyphenation', big:true, title:'Hyphenation' })
     ]),
-    group('Orientasi', [
-      btn({ icon:'portrait', action:'portrait', label:'Potret', big:true, title:'Potret' }),
-      btn({ icon:'landscape', action:'landscape', label:'Lansekap', big:true, title:'Lansekap' })
-    ]),
-    group('Ukuran', [
-      sel({ id:'pageSize', w:104, title:'Ukuran kertas', opts:[['a4','A4 21×29,7'],['letter','Letter'],['legal','Legal'],['a5','A5'],['custom','Khusus…']] })
-    ]),
-    group('Kolom', [
-      btn({ icon:'columns', action:'columnsMenu', split:true, label:'Kolom', big:true, title:'Kolom teks' })
-    ]),
-    group('Hentian', [
-      btn({ icon:'pageBreak', action:'pageBreak', label:'Halaman', big:true, title:'Hentian halaman' }),
-      btn({ icon:'breaks', action:'columnBreak', label:'Kolom', big:true, title:'Hentian kolom' })
-    ]),
-    group('Nomor baris', [
-      btn({ icon:'lineNumbers', action:'toggleLineNumbers', label:'Nomor baris', big:true, title:'Nomor baris' })
-    ]),
-    group('Suku kata', [
-      btn({ icon:'hyphenation', action:'toggleHyphen', label:'Suku kata', big:true, title:'Pemenggalan kata' })
-    ]),
-    group('Paragraf', [
-      btn({ icon:'indentSpacing', action:'paraDialog', label:'Indentasi & spasi', big:true, title:'Indentasi dan spasi paragraf' }),
-      btn({ icon:'grid', action:'toggleGuides', label:'Batas teks', big:true, title:'Tampilkan batas area teks' })
+    group('Paragraph', [
+      btn({ icon:'indentSpacing', action:'paraDialog', label:'Indent & Spacing', big:true, title:'Paragraph indent and spacing' }),
+      btn({ icon:'grid', action:'toggleGuides', label:'Text Boundaries', big:true, title:'Show text boundaries' })
     ])
   ]),
 
   pane('refs', [
-    group('Daftar isi', [
-      btn({ icon:'toc', action:'insertTOC', label:'Daftar isi', big:true, title:'Sisipkan daftar isi dari judul' }),
-      btn({ icon:'toc', action:'updateTOC', label:'Perbarui', big:true, title:'Perbarui daftar isi' })
+    group('Table of Contents', [
+      btn({ icon:'toc', action:'insertTOC', label:'Table of Contents', big:true, title:'Insert a table of contents from headings' }),
+      btn({ icon:'toc', action:'updateTOC', label:'Update Table', big:true, title:'Update the table of contents' })
     ]),
-    group('Catatan kaki', [
-      btn({ icon:'footnote', action:'footnote', label:'Sisipkan', big:true, title:'Sisipkan catatan kaki' }),
-      btn({ icon:'footnote', action:'footnoteList', label:'Kelola', big:true, title:'Lihat semua catatan kaki' })
+    group('Footnotes', [
+      btn({ icon:'footnote', action:'footnote', label:'Insert Footnote', big:true, title:'Insert a footnote' }),
+      btn({ icon:'footnote', action:'footnoteList', label:'Next Footnote', big:true, title:'Browse all footnotes' })
     ]),
-    group('Kutipan', [
-      btn({ icon:'citation', action:'addSource', label:'Sumber', big:true, title:'Tambah sumber kutipan' }),
-      btn({ icon:'citation', action:'insertCitation', label:'Kutipan', big:true, title:'Sisipkan kutipan' }),
-      btn({ icon:'bibliography', action:'bibliography', label:'Daftar pustaka', big:true, title:'Buat daftar pustaka' })
+    group('Citations & Bibliography', [
+      btn({ icon:'citation', action:'addSource', label:'Insert Citation', big:true, title:'Add a new citation source' }),
+      btn({ icon:'citation', action:'insertCitation', label:'Manage Sources', big:true, title:'Insert an existing citation' }),
+      btn({ icon:'bibliography', action:'bibliography', label:'Bibliography', big:true, title:'Insert a bibliography' })
     ]),
-    group('Keterangan', [
-      btn({ icon:'caption', action:'caption', label:'Keterangan', big:true, title:'Sisipkan keterangan gambar/tabel' })
+    group('Captions', [
+      btn({ icon:'caption', action:'caption', label:'Insert Caption', big:true, title:'Insert a caption for a picture or table' })
     ]),
-    group('Indeks', [
-      btn({ icon:'toc', action:'insertTOC', label:'Daftar isi', big:true, title:'Sisipkan daftar isi' })
+    group('Index', [
+      btn({ icon:'toc', action:'insertTOC', label:'Table of Contents', big:true, title:'Insert a table of contents' })
     ])
   ]),
 
   pane('mail', [
-    group('Gabungan surat', [
-      btn({ icon:'paste', action:'mergeFields', split:true, label:'Bidang', big:true, title:'Sisipkan bidang gabungan' }),
-      btn({ icon:'wordcount', action:'pickRecipients', label:'Penerima', big:true, title:'Pilih daftar penerima' }),
-      btn({ icon:'print', action:'finishMerge', label:'Gabungkan', big:true, title:'Gabungkan ke dokumen baru' })
+    group('Create', [
+      btn({ icon:'wordcount', action:'envelope', label:'Envelopes', big:true, title:'Create and print an envelope' }),
+      btn({ icon:'grid', action:'labels', label:'Labels', big:true, title:'Create and print labels' })
     ]),
-    group('Pratinjau', [
-      btn({ icon:'readView', action:'previewMerge', label:'Pratinjau', big:true, title:'Pratinjau hasil gabungan' })
+    group('Start Mail Merge', [
+      btn({ icon:'wordcount', action:'pickRecipients', label:'Select Recipients', big:true, title:'Choose the recipients list' })
     ]),
-    group('Amplop & label', [
-      btn({ icon:'wordcount', action:'envelope', label:'Amplop', big:true, title:'Sisipkan amplop' }),
-      btn({ icon:'grid', action:'labels', label:'Label', big:true, title:'Sisipkan label' })
+    group('Write & Insert Fields', [
+      btn({ icon:'paste', action:'mergeFields', split:true, label:'Insert Merge Field', big:true, title:'Insert a merge field' })
     ]),
-    group('Berkas', [
-      btn({ icon:'save', action:'exportDocx', label:'Simpan .docx', big:true, title:'Ekspor dokumen Word (.docx) asli' }),
-      btn({ icon:'open', action:'openDocx', label:'Buka .docx', big:true, title:'Impor berkas .docx' })
+    group('Preview Results', [
+      btn({ icon:'readView', action:'previewMerge', label:'Preview Results', big:true, title:'Preview the merged result' })
+    ]),
+    group('Finish', [
+      btn({ icon:'print', action:'finishMerge', label:'Finish & Merge', big:true, title:'Merge into a new document' })
+    ]),
+    group('Word Files', [
+      btn({ icon:'save', action:'exportDocx', label:'Save .docx', big:true, title:'Export a native Word (.docx) document' }),
+      btn({ icon:'open', action:'openDocx', label:'Open .docx', big:true, title:'Import a .docx file' })
     ])
   ]),
 
   pane('review', [
-    group('Ejaan', [
-      btn({ icon:'spell', action:'toggleSpell', label:'Ejaan', big:true, title:'Periksa ejaan saat menulis' }),
-      btn({ icon:'language', action:'setLang', label:'Bahasa', big:true, title:'Bahasa dokumen' })
+    group('Proofing', [
+      btn({ icon:'spell', action:'toggleSpell', label:'Spelling', big:true, title:'Check spelling as you type' }),
+      btn({ icon:'language', action:'setLang', label:'Language', big:true, title:'Set the proofing language' }),
+      btn({ icon:'wordcount', action:'wordCount', label:'Word Count', big:true, title:'Document statistics' })
     ]),
-    group('Jumlah kata', [
-      btn({ icon:'wordcount', action:'wordCount', label:'Jumlah kata', big:true, title:'Statistik dokumen' })
+    group('Comments', [
+      btn({ icon:'comment', action:'newComment', label:'New Comment', big:true, title:'New comment' }),
+      btn({ icon:'comment', action:'showComments', label:'Show Comments', big:true, title:'Show the comments pane' }),
+      btn({ icon:'close', action:'deleteComments', label:'Delete All', big:true, title:'Delete all comments' })
     ]),
-    group('Komentar', [
-      btn({ icon:'comment', action:'newComment', label:'Baru', big:true, title:'Komentar baru' }),
-      btn({ icon:'comment', action:'showComments', label:'Panel', big:true, title:'Panel komentar' }),
-      btn({ icon:'close', action:'deleteComments', label:'Hapus semua', big:true, title:'Hapus semua komentar' })
+    group('Tracking', [
+      btn({ icon:'track', action:'toggleTrack', label:'Track Changes', big:true, title:'Track changes' })
     ]),
-    group('Lacak perubahan', [
-      btn({ icon:'track', action:'toggleTrack', label:'Lacak', big:true, title:'Lacak perubahan' }),
-      btn({ icon:'accept', action:'acceptAll', label:'Terima', big:true, title:'Terima semua perubahan' }),
-      btn({ icon:'reject', action:'rejectAll', label:'Tolak', big:true, title:'Tolak semua perubahan' })
+    group('Changes', [
+      btn({ icon:'accept', action:'acceptAll', label:'Accept', big:true, title:'Accept all changes' }),
+      btn({ icon:'reject', action:'rejectAll', label:'Reject', big:true, title:'Reject all changes' })
     ]),
-    group('Lindungi', [
-      btn({ icon:'protect', action:'protect', label:'Batasi', big:true, title:'Batasi pengeditan' })
+    group('Protect', [
+      btn({ icon:'protect', action:'protect', label:'Restrict Editing', big:true, title:'Restrict editing' })
     ]),
-    group('Bandingkan', [
-      btn({ icon:'copy', action:'compareDoc', label:'Bandingkan', big:true, title:'Bandingkan dengan dokumen lain' })
+    group('Compare', [
+      btn({ icon:'copy', action:'compareDoc', label:'Compare', big:true, title:'Compare with another document' })
     ])
   ]),
 
   pane('view', [
-    group('Tampilan', [
-      btn({ icon:'printView', action:'viewPrint', label:'Cetak', big:true, title:'Tata letak cetak' }),
-      btn({ icon:'webView', action:'viewWeb', label:'Web', big:true, title:'Tata letak web' }),
-      btn({ icon:'readView', action:'viewRead', label:'Baca', big:true, title:'Mode baca' }),
-      btn({ icon:'focus', action:'focusMode', label:'Fokus', big:true, title:'Mode fokus' })
+    group('Views', [
+      btn({ icon:'printView', action:'viewPrint', label:'Print Layout', big:true, title:'Print Layout view' }),
+      btn({ icon:'webView', action:'viewWeb', label:'Web Layout', big:true, title:'Web Layout view' }),
+      btn({ icon:'readView', action:'viewRead', label:'Read Mode', big:true, title:'Read Mode' }),
+      btn({ icon:'focus', action:'focusMode', label:'Focus', big:true, title:'Focus mode' })
     ]),
-    group('Perlihatkan', [
-      btn({ icon:'ruler', action:'toggleRuler', label:'Penggaris', big:true, title:'Tampilkan penggaris' }),
-      btn({ icon:'grid', action:'toggleGrid', label:'Garis kisi', big:true, title:'Garis kisi' }),
-      btn({ icon:'navPane', action:'toggleNav', label:'Navigasi', big:true, title:'Panel navigasi' }),
-      btn({ icon:'marks', action:'toggleMarks', label:'Tanda ¶', big:true, title:'Tanda format' })
+    group('Show', [
+      btn({ icon:'ruler', action:'toggleRuler', label:'Ruler', big:true, title:'Show the ruler' }),
+      btn({ icon:'grid', action:'toggleGrid', label:'Gridlines', big:true, title:'Show gridlines' }),
+      btn({ icon:'navPane', action:'toggleNav', label:'Navigation Pane', big:true, title:'Show the navigation pane' })
     ]),
     group('Zoom', [
-      btn({ icon:'zoomFit', action:'zoomWidth', label:'Lebar', big:true, title:'Sesuaikan lebar halaman' }),
-      btn({ icon:'onePage', action:'zoomPage', label:'1 halaman', big:true, title:'Satu halaman penuh' }),
-      btn({ icon:'zoomOut', action:'zoomOut', title:'Perkecil' }),
-      btn({ icon:'zoomIn', action:'zoomIn', title:'Perbesar' }),
-      btn({ icon:'zoomFit', action:'zoomReset', label:'100%', title:'Zoom 100%' })
+      btn({ icon:'zoomFit', action:'zoomWidth', label:'Page Width', big:true, title:'Zoom to page width' }),
+      btn({ icon:'onePage', action:'zoomPage', label:'One Page', big:true, title:'Zoom to one page' }),
+      btn({ icon:'zoomOut', action:'zoomOut', title:'Zoom out' }),
+      btn({ icon:'zoomIn', action:'zoomIn', title:'Zoom in' }),
+      btn({ icon:'zoomFit', action:'zoomReset', label:'100%', title:'100%' })
     ]),
-    group('Tema', [
-      btn({ icon:'sun', action:'themeLight', label:'Terang', big:true, title:'Tema terang' }),
-      btn({ icon:'moon', action:'themeDark', label:'Gelap', big:true, title:'Tema gelap' }),
-      btn({ icon:'moon', action:'canvasDark', label:'Kanvas', big:true, title:'Kanvas gelap' })
+    group('Dark Mode', [
+      btn({ icon:'sun', action:'themeLight', label:'Light', big:true, title:'Light theme' }),
+      btn({ icon:'moon', action:'themeDark', label:'Dark', big:true, title:'Dark theme' }),
+      btn({ icon:'moon', action:'canvasDark', label:'Dark Canvas', big:true, title:'Dark canvas' })
     ]),
-    group('Bantuan', [
-      btn({ icon:'help', action:'help', label:'Pintasan', big:true, title:'Pintasan papan tombol' })
+    group('Help', [
+      btn({ icon:'help', action:'help', label:'Shortcuts', big:true, title:'Keyboard shortcuts' })
     ])
   ])
 ];
@@ -1413,9 +1405,9 @@ function afterChange(){
 function updateStats(){
   const text = editor.innerText || '';
   const words = text.trim() ? text.trim().split(/\s+/).filter(Boolean).length : 0;
-  statusEls.words.textContent = words.toLocaleString('id-ID') + ' kata';
+  statusEls.words.textContent = words.toLocaleString('en-US') + ' words';
   updatePageStatus();
-  statusEls.lang.textContent = editor.getAttribute('lang') === 'en' ? 'English (US)' : 'Bahasa Indonesia';
+  statusEls.lang.textContent = editor.getAttribute('lang') === 'en' ? 'English (US)' : 'Indonesian';
   const r = $('#zoomLabel');
   if(r) r.textContent = zoom + '%';
   statusEls.track.classList.toggle('hidden', !trackOn);
@@ -1600,7 +1592,7 @@ function numify(html, n){
   const d = document.createElement('div');
   d.innerHTML = html;
   d.querySelectorAll('.pgfield').forEach(f => {
-    f.textContent = (f.getAttribute('data-pg') === 'plain' ? '' : 'Halaman ') + n;
+    f.textContent = (f.getAttribute('data-pg') === 'plain' ? '' : 'Page ') + n;
   });
   return d.innerHTML;
 }
@@ -1635,10 +1627,10 @@ function renderSheets(pages, m){
 }
 function syncPageFields(pages){
   docHeader.querySelectorAll('.pgfield').forEach(f => {
-    f.textContent = (f.getAttribute('data-pg') === 'plain' ? '' : 'Halaman ') + 1;
+    f.textContent = (f.getAttribute('data-pg') === 'plain' ? '' : 'Page ') + 1;
   });
   docFooter.querySelectorAll('.pgfield').forEach(f => {
-    f.textContent = (f.getAttribute('data-pg') === 'plain' ? '' : 'Halaman ') + pages;
+    f.textContent = (f.getAttribute('data-pg') === 'plain' ? '' : 'Page ') + pages;
   });
 }
 function updatePageStatus(){
@@ -1660,7 +1652,7 @@ function updatePageStatus(){
     }
   }
   pgCur = Math.max(1, Math.min(total, cur));
-  el.textContent = 'Halaman ' + pgCur + ' dari ' + total;
+  el.textContent = 'Page ' + pgCur + ' of ' + total;
 }
 document.addEventListener('selectionchange', () => {
   if(!pgActive()) return;
@@ -1710,7 +1702,7 @@ function refreshNav(){
   const items = heads.map(h => ({ el:h, lv:parseInt(h.tagName[1], 10), text:h.textContent.trim() }))
     .filter(x => !q || x.text.toLowerCase().includes(q));
   if(!items.length){
-    list.innerHTML = '<div class="nav-empty">' + (q ? 'Tidak ada judul yang cocok' : 'Belum ada judul. Gunakan gaya Judul 1–3.') + '</div>';
+    list.innerHTML = '<div class="nav-empty">' + (q ? 'No matching heading' : 'No headings. Use the Heading 1-3 styles.') + '</div>';
     return;
   }
   list.innerHTML = items.map((x, i) =>
@@ -1732,7 +1724,7 @@ function markDirty(){
   $('#saveDot') && $('#saveDot').classList.add('dirty');
 }
 function queueSave(){
-  if(!settings.autosave){ $('#saveState').textContent = 'Belum disimpan'; return; }
+  if(!settings.autosave){ $('#saveState').textContent = 'Unsaved'; return; }
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => saveLocal(true), 700);
 }
@@ -1751,7 +1743,7 @@ function cleanHtml(){
 function docPayload(){
   return {
     id: docId,
-    name: $('#docName').value || 'Dokumen',
+    name: $('#docName').value || 'Document',
     html: cleanHtml(),
     header: docHeader.innerHTML,
     footer: docFooter.innerHTML,
@@ -1770,7 +1762,7 @@ function saveLocal(silent){
     if(i >= 0) lib[i] = rec; else lib.unshift(rec);
     localStorage.setItem('wordweb.docs', JSON.stringify(lib.slice(0, 20)));
     dirty = false;
-    $('#saveState').textContent = silent ? 'Tersimpan otomatis' : 'Tersimpan';
+    $('#saveState').textContent = silent ? 'Autosaved' : 'Saved';
   }catch(e){
     $('#saveState').textContent = 'Penyimpanan tidak tersedia';
   }
@@ -1783,7 +1775,7 @@ function loadDoc(rec){
   editor.innerHTML = rec.html || '<p><br></p>';
   docHeader.innerHTML = rec.header || '';
   docFooter.innerHTML = rec.footer || '';
-  $('#docName').value = rec.name || 'Dokumen';
+  $('#docName').value = rec.name || 'Document';
   if(rec.hfOn){
     docHeader.classList.toggle('off', !rec.hfOn.h);
     docFooter.classList.toggle('off', !rec.hfOn.f);
@@ -1794,7 +1786,7 @@ function loadDoc(rec){
 }
 
 /* ------------------------------ Files -------------------------------- */
-function docName(){ return ($('#docName').value || 'Dokumen').trim(); }
+function docName(){ return ($('#docName').value || 'Document').trim(); }
 function download(content, filename, mime){
   const blob = new Blob([content], { type:mime });
   const a = document.createElement('a');
@@ -1896,7 +1888,7 @@ $('#fileOpen').addEventListener('change', e => {
     document.title = $('#docName').value + ' — Word Web';
     docId = 'doc-' + Date.now().toString(36);
     afterChange(); saveLocal(false);
-    toast('Berkas dimuat');
+    toast('File loaded');
   };
   reader.readAsText(f);
   e.target.value = '';
@@ -1964,6 +1956,7 @@ editor.addEventListener('paste', e => {
   document.execCommand('insertHTML', false, sanitize(html));
   afterChange();
 });
+
 /* =========================================================================
    INSERT & FORMAT COMMANDS — tables, objects, fields, TOC, footnotes
    ========================================================================= */
@@ -2030,7 +2023,7 @@ ACTIONS.paste = async function(){
     const text = await navigator.clipboard.readText();
     if(text) exec('insertText', text);
   }catch(e){
-    toast('Tempel: gunakan Ctrl+V di dalam dokumen');
+    toast('Paste: press Ctrl+V inside the document');
     editor.focus();
   }
 };
@@ -2046,7 +2039,7 @@ ACTIONS.selectAll = function(){
 let painterStyle = null, painterSticky = false;
 ACTIONS.formatPainter = function(){
   const sel = getSelection();
-  if(sel.isCollapsed){ toast('Pilih teks dulu untuk menyalin formatnya'); return; }
+  if(sel.isCollapsed){ toast('Select text first to copy its format'); return; }
   const node = caretNode();
   const cs = getComputedStyle(node.nodeType === 3 ? node.parentNode : node);
   painterStyle = {
@@ -2056,7 +2049,7 @@ ACTIONS.formatPainter = function(){
   };
   painterSticky = false;
   document.body.style.cursor = 'copy';
-  toast('Format disalin — pilih teks tujuan');
+  toast('Format copied — now select the target text');
 };
 function applyPainter(){
   if(!painterStyle) return;
@@ -2076,14 +2069,14 @@ editor.addEventListener('mouseup', () => {
 
 /* ------------------------------ Font menus ---------------------------- */
 ACTIONS.underlineMenu = function(el){
-  const html = '<div class="pop-title">Garis bawah</div><div class="pop-list">'
+  const html = '<div class="pop-title">Underline</div><div class="pop-list">'
     + '<button data-ul="single">Garis tunggal</button>'
     + '<button data-ul="double">Garis ganda</button>'
     + '<button data-ul="dotted">Titik-titik</button>'
     + '<button data-ul="dashed">Putus-putus</button>'
     + '<button data-ul="wavy">Bergelombang</button>'
     + '<div class="pop-sep"></div>'
-    + '<button data-ul="none">Hapus garis bawah</button>'
+    + '<button data-ul="none">Remove underline</button>'
     + '</div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
@@ -2098,13 +2091,13 @@ ACTIONS.underlineMenu = function(el){
   });
 };
 ACTIONS.textEffects = function(el){
-  const html = '<div class="pop-title">Efek teks</div><div class="pop-list">'
+  const html = '<div class="pop-title">Text Effects</div><div class="pop-list">'
     + '<button data-fx="shadow">Bayangan</button>'
     + '<button data-fx="glow">Cahaya</button>'
     + '<button data-fx="outline">Garis luar</button>'
     + '<button data-fx="strike">Coretan</button>'
     + '<button data-fx="smallcaps">Kapital kecil</button>'
-    + '<div class="pop-sep"></div><button data-fx="none">Tanpa efek</button></div>';
+    + '<div class="pop-sep"></div><button data-fx="none">No effects</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-fx]');
@@ -2125,12 +2118,12 @@ ACTIONS.textEffects = function(el){
   });
 };
 ACTIONS.caseMenu = function(el){
-  const html = '<div class="pop-title">Ubah huruf</div><div class="pop-list">'
-    + '<button data-case="sentence">Kalimat (Huruf Awal)</button>'
-    + '<button data-case="lower">huruf kecil</button>'
-    + '<button data-case="upper">HURUF BESAR</button>'
-    + '<button data-case="title">Huruf Kapital Tiap Kata</button>'
-    + '<button data-case="toggle">tOGGLE hURUF</button></div>';
+  const html = '<div class="pop-title">Change Case</div><div class="pop-list">'
+    + '<button data-case="sentence">Sentence case.</button>'
+    + '<button data-case="lower">lowercase</button>'
+    + '<button data-case="upper">UPPERCASE</button>'
+    + '<button data-case="title">Capitalize Each Word</button>'
+    + '<button data-case="toggle">tOGGLE cASE</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-case]');
@@ -2141,7 +2134,7 @@ ACTIONS.caseMenu = function(el){
 };
 function changeCase(kind){
   const sel = getSelection();
-  if(!sel.rangeCount || sel.isCollapsed){ toast('Pilih teks yang ingin diubah'); return; }
+  if(!sel.rangeCount || sel.isCollapsed){ toast('Select the text to change'); return; }
   const r = sel.getRangeAt(0);
   const frag = r.extractContents();
   const walker = document.createTreeWalker(frag, NodeFilter.SHOW_TEXT);
@@ -2197,11 +2190,11 @@ function applyList(kind){
   afterChange();
 }
 ACTIONS.bulletMenu = function(el){
-  const html = '<div class="pop-title">Daftar butir</div><div class="pop-list">'
+  const html = '<div class="pop-title">Bullets</div><div class="pop-list">'
     + '<button data-list="ul-disc">● Butir</button>'
     + '<button data-list="ul-circle">○ Lingkaran</button>'
-    + '<button data-list="ul-square">■ Kotak</button>'
-    + '<div class="pop-sep"></div><button data-list="off">Hapus daftar</button></div>';
+    + '<button data-list="ul-square">■ Square</button>'
+    + '<div class="pop-sep"></div><button data-list="off">Remove list</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-list]');
@@ -2212,12 +2205,12 @@ ACTIONS.bulletMenu = function(el){
   });
 };
 ACTIONS.numberMenu = function(el){
-  const html = '<div class="pop-title">Daftar bernomor</div><div class="pop-list">'
+  const html = '<div class="pop-title">Numbering</div><div class="pop-list">'
     + '<button data-list="ol-decimal">1. 2. 3.</button>'
     + '<button data-list="ol-alpha">a. b. c.</button>'
     + '<button data-list="ol-roman">I. II. III.</button>'
     + '<button data-list="ol-lower-roman">i. ii. iii.</button>'
-    + '<div class="pop-sep"></div><button data-list="off">Hapus daftar</button></div>';
+    + '<div class="pop-sep"></div><button data-list="off">Remove list</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-list]');
@@ -2230,13 +2223,13 @@ ACTIONS.numberMenu = function(el){
 ACTIONS.multilevelList = function(){
   const n = caretNode();
   const li = n && n.closest ? n.closest('li') : null;
-  if(!li){ toast('Letakkan kursor pada daftar'); return; }
+  if(!li){ toast('Place the caret in a list'); return; }
   exec('indent');
   const l2 = caretNode().closest('ul,ol');
   if(l2) l2.style.listStyleType = l2.tagName === 'UL' ? 'circle' : 'lower-alpha';
 };
 ACTIONS.sortMenu = function(el){
-  const html = '<div class="pop-title">Urutkan paragraf</div><div class="pop-list">'
+  const html = '<div class="pop-title">Sort Text</div><div class="pop-list">'
     + '<button data-sort="asc">A → Z</button><button data-sort="desc">Z → A</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
@@ -2248,14 +2241,14 @@ ACTIONS.sortMenu = function(el){
 };
 function sortBlocks(desc){
   const blocks = blocksInSelection();
-  if(blocks.length < 2){ toast('Pilih minimal dua paragraf'); return; }
+  if(blocks.length < 2){ toast('Select at least two paragraphs'); return; }
   const arr = blocks.slice().sort((a, b) => a.innerText.localeCompare(b.innerText, 'id'));
   if(desc) arr.reverse();
   const parent = blocks[0].parentNode;
   const anchor = blocks[0];
   arr.forEach(el => parent.insertBefore(el, anchor));
   afterChange();
-  toast('Paragraf diurutkan');
+  toast('Paragraphs sorted');
 }
 ACTIONS.toggleMarks = function(){
   editor.classList.toggle('marks');
@@ -2264,12 +2257,12 @@ ACTIONS.toggleMarks = function(){
 };
 ACTIONS.lineSpacing = function(el){
   const opts = [['1','1,0'],['1.15','1,15'],['1.5','1,5'],['2','2,0'],['2.5','2,5'],['3','3,0']];
-  const html = '<div class="pop-title">Jarak baris</div><div class="pop-list">'
+  const html = '<div class="pop-title">Line spacing</div><div class="pop-list">'
     + opts.map(o => '<button data-lh="' + o[0] + '">' + o[1] + '</button>').join('')
     + '<div class="pop-sep"></div>'
-    + '<button data-lh="before">Tambah spasi sebelum</button>'
-    + '<button data-lh="after">Tambah spasi sesudah</button>'
-    + '<button data-lh="clear">Hapus spasi tambahan</button></div>';
+    + '<button data-lh="before">Add space before paragraph</button>'
+    + '<button data-lh="after">Add space after paragraph</button>'
+    + '<button data-lh="clear">Remove space after paragraph</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-lh]');
@@ -2277,7 +2270,7 @@ ACTIONS.lineSpacing = function(el){
     closePopover();
     const v = b.dataset.lh;
     const blocks = blocksInSelection();
-    if(!blocks.length){ toast('Letakkan kursor di paragraf'); return; }
+    if(!blocks.length){ toast('Place the caret in a paragraph'); return; }
     blocks.forEach(bl => {
       if(v === 'before') bl.style.marginTop = '12pt';
       else if(v === 'after') bl.style.marginBottom = '12pt';
@@ -2288,11 +2281,11 @@ ACTIONS.lineSpacing = function(el){
   });
 };
 ACTIONS.bordersMenu = function(el){
-  const html = '<div class="pop-title">Batas paragraf</div><div class="pop-list">'
-    + '<button data-bd="box">Kotak</button><button data-bd="all">Semua sisi tebal</button>'
-    + '<button data-bd="top">Atas</button><button data-bd="bottom">Bawah</button>'
+  const html = '<div class="pop-title">Borders and Shading</div><div class="pop-list">'
+    + '<button data-bd="box">Box</button><button data-bd="all">All borders</button>'
+    + '<button data-bd="top">Top</button><button data-bd="bottom">Bottom</button>'
     + '<button data-bd="left">Kiri</button><button data-bd="right">Kanan</button>'
-    + '<div class="pop-sep"></div><button data-bd="none">Tanpa batas</button></div>';
+    + '<div class="pop-sep"></div><button data-bd="none">No border</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-bd]');
@@ -2314,8 +2307,8 @@ ACTIONS.stylePane = function(){
   const body = '<div class="pop-list" style="max-height:52vh;overflow:auto">'
     + STYLES.map(s => '<button data-style="' + s.id + '" style="font-size:13px">'
       + '<b style="' + (s.id === 'title' ? 'font-size:15px' : s.id === 'h1' ? 'font-size:14px' : '') + '">' + s.name + '</b></button>').join('')
-    + '</div><p class="dlg-note">Gaya paragraf diterapkan pada blok tempat kursor berada.</p>';
-  const b = openDialog({ title:'Gaya', body, okText:false, cancelText:'Tutup' });
+    + '</div><p class="dlg-note">The paragraph style applies to the block at the caret.</p>';
+  const b = openDialog({ title:'Styles', body, okText:false, cancelText:'Tutup' });
   b.addEventListener('click', e => {
     const btn = e.target.closest('[data-style]');
     if(btn){ applyStyle(btn.dataset.style); dlg.close(); }
@@ -2519,10 +2512,10 @@ const SHAPES = {
   callout: '<path d="M4 6h92v40H46L30 58V46H4z"/>'
 };
 ACTIONS.shapesMenu = function(el){
-  const html = '<div class="pop-title">Bentuk</div><div class="pop-list">'
+  const html = '<div class="pop-title">Shapes</div><div class="pop-list">'
     + Object.keys(SHAPES).map(k => '<button data-shape="' + k + '">'
       + '<svg viewBox="0 0 100 60" style="width:26px;height:16px;stroke:currentColor;fill:none;stroke-width:4">' + SHAPES[k] + '</svg>'
-      + ({ rect:'Persegi panjang', round:'Persegi bulat', ellipse:'Elips', triangle:'Segitiga', diamond:'Belah ketupat', arrow:'Panah', line:'Garis', star:'Bintang', callout:'Balon teks' })[k]
+      + ({ rect:'Persegi panjang', round:'Persegi bulat', ellipse:'Elips', triangle:'Segitiga', diamond:'Belah ketupat', arrow:'Panah', line:'Line', star:'Bintang', callout:'Balon teks' })[k]
       + '</button>').join('') + '</div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
@@ -2538,7 +2531,7 @@ ACTIONS.shapesMenu = function(el){
 };
 ACTIONS.iconsMenu = function(el){
   const icons = ['✓','✗','★','☆','♥','♦','→','←','↑','↓','⚠','☎','✉','⌂','⚑','☀','☂','✎','⌛','⚙','⏱','✔','✚','●'];
-  const html = '<div class="pop-title">Ikon</div><div style="display:grid;grid-template-columns:repeat(8,28px);gap:2px">'
+  const html = '<div class="pop-title">Icons</div><div style="display:grid;grid-template-columns:repeat(8,28px);gap:2px">'
     + icons.map(s => '<button class="mini" data-icon="' + s + '" style="height:28px;padding:0;font-size:15px">' + s + '</button>').join('')
     + '</div>';
   const p = openPopover(el, html);
@@ -2551,7 +2544,7 @@ ACTIONS.iconsMenu = function(el){
 };
 ACTIONS.symbolMenu = function(el){
   const syms = ['—','–','…','•','✓','→','←','↑','↓','°','±','×','÷','≤','≥','≠','≈','∞','√','∑','∫','π','Ω','µ','€','£','¥','©','®','™','§','¶','½','¼','¾','α','β','γ','Δ','λ','σ','∂','∈','∅'];
-  const html = '<div class="pop-title">Simbol</div><div style="display:grid;grid-template-columns:repeat(9,26px);gap:1px">'
+  const html = '<div class="pop-title">Symbol</div><div style="display:grid;grid-template-columns:repeat(9,26px);gap:1px">'
     + syms.map(s => '<button class="mini" data-sym="' + s + '" style="height:26px;padding:0;font-size:13px">' + s + '</button>').join('')
     + '</div>';
   const p = openPopover(el, html);
@@ -2563,14 +2556,14 @@ ACTIONS.symbolMenu = function(el){
   });
 };
 ACTIONS.chart = function(){
-  const body = '<div class="field"><label>Jenis bagan</label><select id="chType">'
-    + '<option value="bar">Batang</option><option value="column">Kolom</option>'
+  const body = '<div class="field"><label>Chart type</label><select id="chType">'
+    + '<option value="bar">Batang</option><option value="column">Columns</option>'
     + '<option value="line">Garis</option><option value="pie">Lingkaran</option></select></div>'
-    + '<div class="field"><label>Data (satu baris: label,nilai)</label>'
+    + '<div class="field"><label>Data (one row per line: label,value)</label>'
     + '<textarea id="chData" rows="5">Januari,120\nFebruari,180\nMaret,150\nApril,220</textarea></div>'
     + '<p class="dlg-note">Nilai berupa angka. Pemisah koma atau titik koma.</p>';
   openDialog({
-    title:'Sisipkan bagan', body, okText:'Sisipkan',
+    title:'Insert a chart', body, okText:'Insert',
     onOk: root => {
       const type = $('#chType', root).value;
       const raw = $('#chData', root).value.split(/\n/).map(l => l.trim()).filter(Boolean);
@@ -2578,7 +2571,7 @@ ACTIONS.chart = function(){
         const p = l.split(/[,;]/);
         return { label:(p[0] || '').trim(), value:parseFloat((p[1] || '0').replace(',', '.')) || 0 };
       });
-      if(!data.length){ toast('Data belum diisi'); return false; }
+      if(!data.length){ toast('Data is empty'); return false; }
       const svg = buildChart(type, data);
       return () => exec('insertHTML', svg + '<p><br></p>');
     }
@@ -2639,25 +2632,25 @@ function buildChart(type, data){
     + inner + '</svg>';
 }
 ACTIONS.textBox = function(){
-  exec('insertHTML', '<div class="tbox" contenteditable="true">Teks dalam kotak…</div><p><br></p>');
+  exec('insertHTML', '<div class="tbox" contenteditable="true">Your text here...</div><p><br></p>');
 };
 ACTIONS.wordArt = function(){
   exec('insertHTML', '<div class="wordart" contenteditable="true">Teks WordArt</div><p><br></p>');
 };
 ACTIONS.dropCap = function(){
   const b = closestBlock(getSelection().anchorNode);
-  if(!b){ toast('Letakkan kursor pada paragraf'); return; }
+  if(!b){ toast('Place the caret in a paragraph'); return; }
   b.classList.toggle('dropcap');
   afterChange();
 };
 ACTIONS.equation = function(){
-  const body = '<div class="field"><label>Persamaan</label><input id="eqInput" value="E = mc²"></div>'
+  const body = '<div class="field"><label>Equation</label><input id="eqInput" value="E = mc²"></div>'
     + '<div style="display:grid;grid-template-columns:repeat(10,1fr);gap:2px">'
     + ['√','∑','∫','π','∞','±','≤','≥','≠','≈','α','β','θ','λ','µ','Δ','∂','∈','∅','→']
       .map(s => '<button type="button" class="mini" data-eqsym="' + s + '" style="padding:2px 0">' + s + '</button>').join('')
-    + '</div><p class="dlg-note">Klik simbol untuk menambahkannya ke persamaan.</p>';
+    + '</div><p class="dlg-note">Click a symbol to add it to the equation.</p>';
   openDialog({
-    title:'Sisipkan persamaan', body, okText:'Sisipkan',
+    title:'Insert an equation', body, okText:'Insert',
     onOpen: root => {
       root.addEventListener('click', e => {
         const b = e.target.closest('[data-eqsym]');
@@ -2682,11 +2675,11 @@ ACTIONS.insertDate = function(){
 ACTIONS.link = function(){
   const sel = getSelection();
   const has = sel.rangeCount && !sel.isCollapsed;
-  const body = '<div class="field"><label>Teks yang ditampilkan</label><input id="lnText" value="'
+  const body = '<div class="field"><label>Text to display</label><input id="lnText" value="'
     + esc(has ? sel.toString() : '') + '"></div>'
-    + '<div class="field"><label>Alamat (URL)</label><input id="lnUrl" value="https://"></div>';
+    + '<div class="field"><label>Address (URL)</label><input id="lnUrl" value="https://"></div>';
   openDialog({
-    title:'Sisipkan tautan', body, okText:'Sisipkan',
+    title:'Insert a link', body, okText:'Insert',
     onOk: root => {
       const url = $('#lnUrl', root).value.trim();
       const text = $('#lnText', root).value.trim() || url;
@@ -2705,12 +2698,12 @@ ACTIONS.link = function(){
   });
 };
 ACTIONS.bookmark = function(){
-  ask('Sisipkan penanda', 'Nama penanda', 'Penanda1').then(name => {
+  ask('Insert a bookmark', 'Bookmark name', 'Penanda1').then(name => {
     if(!name) return;
     const sel = getSelection();
     const text = sel.rangeCount && !sel.isCollapsed ? sel.toString() : name;
     exec('insertHTML', '<span class="bookmark" id="bm-' + esc(name.replace(/\s+/g, '-')) + '" data-bookmark="' + esc(name) + '">' + esc(text) + '</span>');
-    toast('Penanda "' + name + '" ditambahkan');
+    toast('Bookmark "' + name + '" ditambahkan');
   });
 };
 
@@ -2718,32 +2711,32 @@ ACTIONS.bookmark = function(){
 ACTIONS.toggleHeader = function(){
   docHeader.classList.toggle('off');
   schedulePaginate();
-  if(!docHeader.classList.contains('off')){ docHeader.focus(); toast('Header aktif — ketik di area atas halaman'); }
+  if(!docHeader.classList.contains('off')){ docHeader.focus(); toast('Header active — type in the top area of the page'); }
   afterChange();
 };
 ACTIONS.toggleFooter = function(){
   docFooter.classList.toggle('off');
   schedulePaginate();
-  if(!docFooter.classList.contains('off')){ docFooter.focus(); toast('Footer aktif — ketik di area bawah halaman'); }
+  if(!docFooter.classList.contains('off')){ docFooter.focus(); toast('Footer active — type in the bottom area of the page'); }
   afterChange();
 };
 ACTIONS.pageNumber = function(){
   docFooter.classList.remove('off');
-  docFooter.innerHTML += '<span class="pgfield" data-pg="1">Halaman 1</span>';
+  docFooter.innerHTML += '<span class="pgfield" data-pg="1">Page 1</span>';
   docFooter.focus();
   afterChange();
   paginate();
-  toast('Nomor halaman ditambahkan di footer');
+  toast('Page number added to the footer');
 };
 
 /* ----------------------------- Footnotes ------------------------------ */
 let fnCounter = 0;
 ACTIONS.footnote = function(){
   const sel = getSelection();
-  const body = '<div class="field"><label>Isi catatan kaki</label><textarea id="fnText" rows="3"></textarea></div>'
-    + '<p class="dlg-note">Catatan akan diberi nomor otomatis dan ditampilkan di akhir dokumen.</p>';
+  const body = '<div class="field"><label>Footnote text</label><textarea id="fnText" rows="3"></textarea></div>'
+    + '<p class="dlg-note">Footnotes are numbered automatically and shown at the end of the document.</p>';
   openDialog({
-    title:'Sisipkan catatan kaki', body, okText:'Sisipkan',
+    title:'Insert a footnote', body, okText:'Insert',
     onOk: root => {
       const text = $('#fnText', root).value.trim();
       if(!text) return false;
@@ -2784,23 +2777,23 @@ function refreshFootnotes(){
 ACTIONS.footnoteList = function(){
   const notes = $$('sup.fn', editor).map((m, i) => (i + 1) + '. ' + (m.dataset.note || ''));
   openDialog({
-    title:'Catatan kaki', okText:false, cancelText:'Tutup',
+    title:'Footnote', okText:false, cancelText:'Tutup',
     body: notes.length ? '<ol>' + notes.map(n => '<li>' + esc(n.replace(/^\d+\.\s*/, '')) + '</li>').join('') + '</ol>'
-      : '<p>Belum ada catatan kaki.</p>'
+      : '<p>No footnotes yet.</p>'
   });
 };
 
 /* ------------------------------- TOC ---------------------------------- */
 ACTIONS.insertTOC = function(){
   const heads = $$('h1,h2,h3', editor).filter(h => h.textContent.trim());
-  if(!heads.length){ toast('Buat judul dengan gaya Judul 1–3 terlebih dahulu'); return; }
+  if(!heads.length){ toast('Create headings with Heading 1-3 styles first'); return; }
   const items = heads.map((h, i) => {
     if(!h.id) h.id = 'h-' + i + '-' + Date.now().toString(36);
     return '<a class="toc-item lv' + h.tagName[1] + '" href="#' + h.id + '" data-toc="' + h.id + '">'
       + '<span>' + esc(h.textContent.trim()) + '</span><span class="dots"></span></a>';
   }).join('');
   const html = '<div class="toc" contenteditable="false" data-toc-root="1">'
-    + '<div class="toc-title">Daftar Isi</div>' + items + '</div><p><br></p>';
+    + '<div class="toc-title">Table of Contents</div>' + items + '</div><p><br></p>';
   const sel = getSelection();
   if(sel.rangeCount && editor.contains(sel.anchorNode)){
     document.execCommand('insertHTML', false, html);
@@ -2808,19 +2801,19 @@ ACTIONS.insertTOC = function(){
     editor.insertAdjacentHTML('afterbegin', html);
   }
   afterChange();
-  toast('Daftar isi dibuat dari ' + heads.length + ' judul');
+  toast('Table of contents created from ' + heads.length + ' headings');
 };
 ACTIONS.updateTOC = function(){
   const root = $('[data-toc-root]', editor);
-  if(!root){ toast('Belum ada daftar isi'); return; }
+  if(!root){ toast('No table of contents yet'); return; }
   const heads = $$('h1,h2,h3', editor).filter(h => h.textContent.trim());
-  root.innerHTML = '<div class="toc-title">Daftar Isi</div>' + heads.map((h, i) => {
+  root.innerHTML = '<div class="toc-title">Table of Contents</div>' + heads.map((h, i) => {
     if(!h.id) h.id = 'h-' + i + '-' + Date.now().toString(36);
     return '<a class="toc-item lv' + h.tagName[1] + '" href="#' + h.id + '" data-toc="' + h.id + '">'
       + '<span>' + esc(h.textContent.trim()) + '</span><span class="dots"></span></a>';
   }).join('');
   afterChange();
-  toast('Daftar isi diperbarui');
+  toast('Table of contents updated');
 };
 editor.addEventListener('click', e => {
   const a = e.target.closest('[data-toc]');
@@ -2840,13 +2833,13 @@ function setSources(list){
 }
 ACTIONS.addSource = function(){
   const body = '<div class="dlg-grid">'
-    + '<div class="field"><label>Penulis (Nama belakang)</label><input id="srcAuthor"></div>'
-    + '<div class="field"><label>Tahun</label><input id="srcYear" value="' + new Date().getFullYear() + '"></div>'
-    + '</div><div class="field"><label>Judul</label><input id="srcTitle"></div>'
-    + '<div class="dlg-grid"><div class="field"><label>Penerbit</label><input id="srcPub"></div>'
+    + '<div class="field"><label>Author (Last name)</label><input id="srcAuthor"></div>'
+    + '<div class="field"><label>Year</label><input id="srcYear" value="' + new Date().getFullYear() + '"></div>'
+    + '</div><div class="field"><label>Title</label><input id="srcTitle"></div>'
+    + '<div class="dlg-grid"><div class="field"><label>Publisher</label><input id="srcPub"></div>'
     + '<div class="field"><label>Kota</label><input id="srcCity"></div></div>';
   openDialog({
-    title:'Tambah sumber', body, okText:'Simpan',
+    title:'Add source', body, okText:'Save',
     onOk: root => {
       const s = {
         author: $('#srcAuthor', root).value.trim() || 'Anonim',
@@ -2855,22 +2848,22 @@ ACTIONS.addSource = function(){
         pub: $('#srcPub', root).value.trim(),
         city: $('#srcCity', root).value.trim()
       };
-      if(!s.title){ toast('Judul wajib diisi'); return false; }
+      if(!s.title){ toast('Title is required'); return false; }
       const list = getSources();
       list.push(s);
       setSources(list);
-      toast('Sumber disimpan (' + list.length + ' total)');
+      toast('Sources saved (' + list.length + ' total)');
     }
   });
 };
 ACTIONS.insertCitation = function(){
   const list = getSources();
-  if(!list.length){ toast('Belum ada sumber — tambahkan dulu'); return; }
-  const body = '<div class="field"><label>Pilih sumber</label><select id="citeSel">'
+  if(!list.length){ toast('No sources yet — add one first'); return; }
+  const body = '<div class="field"><label>Pick a source</label><select id="citeSel">'
     + list.map((s, i) => '<option value="' + i + '">' + esc(s.author + ' (' + s.year + ') — ' + s.title) + '</option>').join('')
     + '</select></div>';
   openDialog({
-    title:'Sisipkan kutipan', body, okText:'Sisipkan',
+    title:'Insert a citation', body, okText:'Insert',
     onOk: root => {
       const s = list[+$('#citeSel', root).value];
       return () => exec('insertText', '(' + s.author + ', ' + s.year + ')');
@@ -2879,20 +2872,20 @@ ACTIONS.insertCitation = function(){
 };
 ACTIONS.bibliography = function(){
   const list = getSources();
-  if(!list.length){ toast('Belum ada sumber'); return; }
+  if(!list.length){ toast('No sources yet'); return; }
   const items = list.slice().sort((a, b) => a.author.localeCompare(b.author)).map(s =>
     '<p style="text-indent:-18pt;padding-left:18pt;margin:0 0 6pt">'
     + esc(s.author) + ' (' + esc(s.year) + '). <i>' + esc(s.title) + '</i>. '
     + (s.city ? esc(s.city) + ': ' : '') + esc(s.pub || '') + '.</p>').join('');
-  const html = '<h2>Daftar Pustaka</h2>' + items + '<p><br></p>';
+  const html = '<h2>Bibliography</h2>' + items + '<p><br></p>';
   exec('insertHTML', html);
-  toast('Daftar pustaka dibuat');
+  toast('Bibliography inserted');
 };
 
 /* ----------------------------- Captions ------------------------------- */
 function insertCaption(obj){
   const caps = $$('.caption, .st-caption', editor).length;
-  const kind = obj && obj.tagName === 'IMG' ? 'Gambar' : obj && obj.tagName === 'TABLE' ? 'Tabel' : 'Gambar';
+  const kind = obj && obj.tagName === 'IMG' ? 'Pictures' : obj && obj.tagName === 'TABLE' ? 'Tables' : 'Pictures';
   const label = kind + ' ' + (caps + 1) + ': ';
   const p = document.createElement('p');
   p.className = 'caption st-caption';
@@ -2920,20 +2913,20 @@ ACTIONS.pageBreak = function(){
   exec('insertHTML', '<div class="pagebreak" contenteditable="false"></div><p><br></p>');
 };
 ACTIONS.columnBreak = function(){
-  if(pageSetup.columns < 2){ toast('Aktifkan kolom dulu di tab Tata Letak'); return; }
+  if(pageSetup.columns < 2){ toast('Enable columns first on the Layout tab'); return; }
   exec('insertHTML', '<div class="colbreak" contenteditable="false"></div><p><br></p>');
 };
 ACTIONS.blankPage = function(){
   exec('insertHTML', '<div class="pagebreak" contenteditable="false"></div><p><br></p><p><br></p>');
 };
 ACTIONS.coverPage = function(){
-  const title = $('#docName').value || 'Judul Dokumen';
+  const title = $('#docName').value || 'Document Title';
   const today = new Date().toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
   const html = '<div class="cover" style="text-align:center;padding-top:120pt">'
     + '<p style="font-size:11pt;letter-spacing:2px;color:#6b7280;text-transform:uppercase">' + esc(settings.author || 'Penulis') + '</p>'
     + '<p style="font-size:30pt;font-weight:600;margin:18pt 0 8pt;line-height:1.2">' + esc(title) + '</p>'
     + '<p style="font-size:12pt;color:#4b5563">' + esc(today) + '</p>'
-    + '<p style="margin-top:140pt;font-size:10pt;color:#6b7280">Disusun dengan Word Web</p>'
+    + '<p style="margin-top:140pt;font-size:10pt;color:#6b7280">Made with Word Web</p>'
     + '</div><div class="pagebreak" contenteditable="false"></div><p><br></p>';
   const sel = getSelection();
   if(sel.rangeCount && editor.contains(sel.anchorNode) && !editor.innerText.trim()){
@@ -2942,8 +2935,9 @@ ACTIONS.coverPage = function(){
     editor.insertAdjacentHTML('afterbegin', html);
   }
   afterChange();
-  toast('Halaman sampul dibuat');
+  toast('Cover page inserted');
 };
+
 /* =========================================================================
    MAIL MERGE + REAL .DOCX (OOXML) EXPORT / IMPORT
    ========================================================================= */
@@ -2970,9 +2964,9 @@ function fillMerge(html, rec){
 
 ACTIONS.mergeFields = function(el){
   const fields = mergeFieldsList();
-  const html = '<div class="pop-title">Sisipkan bidang</div><div class="pop-list">'
+  const html = '<div class="pop-title">Insert Merge Field</div><div class="pop-list">'
     + fields.map(f => '<button data-field="' + esc(f) + '">{{' + esc(f) + '}}</button>').join('')
-    + '</div><p class="dlg-note" style="max-width:200px">Bidang akan diganti saat penggabungan.</p>';
+    + '</div><p class="dlg-note" style="max-width:200px">Fields are replaced during the merge.</p>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-field]');
@@ -2990,14 +2984,14 @@ ACTIONS.pickRecipients = function(){
   const current = recs.length
     ? [Object.keys(recs[0]).join(',')].concat(recs.map(r => Object.keys(recs[0]).map(k => r[k]).join(','))).join('\n')
     : sample;
-  const body = '<div class="field"><label>Data penerima (CSV — baris pertama adalah nama kolom)</label>'
+  const body = '<div class="field"><label>Recipients (CSV — the first row holds the column names)</label>'
     + '<textarea id="recData" rows="7" style="font-family:Consolas,monospace;font-size:12px">' + esc(current) + '</textarea></div>'
-    + '<p class="dlg-note">Pisahkan kolom dengan koma. Gunakan nama kolom sebagai bidang, mis. {{nama}}.</p>';
+    + '<p class="dlg-note">Separate columns with commas. Use column names as fields, e.g. {{nama}}.</p>';
   openDialog({
-    title:'Pilih penerima', body, okText:'Simpan daftar',
+    title:'Select Recipients', body, okText:'Save list',
     onOk: root => {
       const lines = $('#recData', root).value.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
-      if(lines.length < 2){ toast('Perlu satu baris judul dan minimal satu baris data'); return false; }
+      if(lines.length < 2){ toast('Perlu satu baris headings dan minimal satu baris data'); return false; }
       const head = lines[0].split(',').map(h => h.trim());
       const list = lines.slice(1).map(l => {
         const cells = l.split(',');
@@ -3006,35 +3000,35 @@ ACTIONS.pickRecipients = function(){
         return o;
       });
       setRecipients(list);
-      toast(list.length + ' penerima disimpan');
+      toast(list.length + '  recipients saved');
     }
   });
 };
 
 ACTIONS.previewMerge = function(){
   const recs = getRecipients();
-  if(!recs.length){ toast('Belum ada penerima — klik Penerima dulu'); return; }
+  if(!recs.length){ toast('No recipients yet — click Select Recipients first'); return; }
   const html = fillMerge(editor.innerHTML, recs[0]);
   openDialog({
-    title:'Pratinjau gabungan — ' + esc(recs[0][Object.keys(recs[0])[0]] || ''),
+    title:'Mail merge preview — ' + esc(recs[0][Object.keys(recs[0])[0]] || ''),
     okText:false, cancelText:'Tutup',
     body:'<div style="border:1px solid var(--border);border-radius:6px;padding:14px;background:#fff;color:#111;max-height:46vh;overflow:auto;font-size:12.5px">'
-      + html + '</div><p class="dlg-note">Data penerima pertama dari ' + recs.length + '.</p>'
+      + html + '</div><p class="dlg-note">First recipient of ' + recs.length + '.</p>'
   });
 };
 
 ACTIONS.finishMerge = async function(){
   const recs = getRecipients();
-  if(!recs.length){ toast('Belum ada penerima — klik Penerima dulu'); return; }
-  if(!/\{\{/.test(editor.innerHTML)){ toast('Dokumen belum memuat bidang {{…}}'); return; }
-  const ok = await confirmDlg('Gabungkan surat', 'Buat ' + recs.length + ' salinan surat dalam dokumen ini? Isi saat ini akan diganti (tersimpan otomatis sebelumnya).', 'Gabungkan');
+  if(!recs.length){ toast('No recipients yet — click Select Recipients first'); return; }
+  if(!/\{\{/.test(editor.innerHTML)){ toast('The document has no {{...}} fields yet'); return; }
+  const ok = await confirmDlg('Finish & Merge', 'Create ' + recs.length + ' copies of the letter into this document? The current content will be replaced (it is auto-saved first).', 'Gabungkan');
   if(!ok) return;
   saveLocal(true);
   const src = editor.innerHTML;
   const parts = recs.map(r => '<div class="merge-copy">' + fillMerge(src, r) + '</div>');
   editor.innerHTML = parts.join('<div class="pagebreak" contenteditable="false"></div>');
   afterChange();
-  toast(recs.length + ' surat digabungkan');
+  toast(recs.length + ' letters merged');
 };
 
 ACTIONS.envelope = function(){
@@ -3043,11 +3037,11 @@ ACTIONS.envelope = function(){
     + '<div style="font-size:9pt;color:#6b7280">Pengirim</div>'
     + '<div style="font-size:10.5pt;margin-bottom:26pt">{{nama_perusahaan}}<br>{{alamat_pengirim}}<br>{{kota_pengirim}}</div>'
     + '<div style="text-align:center;font-size:10.5pt;line-height:1.7;margin:18pt 0">'
-    + 'Kepada Yth.<br><b>{{nama}}</b><br>{{jabatan}}<br>{{perusahaan}}<br>{{alamat}}<br>{{kota}}</div>'
+    + 'To<br><b>{{nama}}</b><br>{{jabatan}}<br>{{perusahaan}}<br>{{alamat}}<br>{{kota}}</div>'
     + '<div style="position:absolute;right:24pt;top:18pt;font-size:9pt;color:#6b7280">' + esc(today) + '</div>'
     + '</div><p><br></p>';
   exec('insertHTML', html);
-  toast('Amplop disisipkan — ganti teks {{…}} sesuai kebutuhan');
+  toast('Envelope inserted — edit the {{...}} placeholders');
 };
 
 ACTIONS.labels = function(){
@@ -3061,7 +3055,7 @@ ACTIONS.labels = function(){
     rows += '</tr>';
   }
   exec('insertHTML', '<table style="table-layout:fixed">' + rows + '</table><p><br></p>');
-  toast('Label 3 × 5 disisipkan');
+  toast('3 × 5 labels inserted');
 };
 
 /* ------------------------------ ZIP writer ---------------------------- */
@@ -3174,7 +3168,7 @@ function runsFrom(node, fmt){
     if(n.nodeType !== 1) return;
     const tag = n.tagName.toLowerCase();
     if(tag === 'br'){ out += '<w:r><w:br/></w:r>'; return; }
-    if(tag === 'img'){ out += runXml('[Gambar]', fmt); return; }
+    if(tag === 'img'){ out += runXml('[Image]', fmt); return; }
     if(tag === 'sup' || tag === 'sub'){ out += runsFrom(n, Object.assign({}, fmt, tag === 'sup' ? { sup:true } : { sub:true })); return; }
     const f2 = Object.assign({}, fmt);
     if(tag === 'b' || tag === 'strong') f2.b = true;
@@ -3339,15 +3333,15 @@ ACTIONS.exportDocx = function(){
     const blob = zipStore(files);
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = docName() + '.docx';
+    a.download = docName() + ' .docx';
     document.body.appendChild(a);
     a.click();
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
     saveLocal(false);
-    toast('Dokumen .docx diunduh (' + Math.round(blob.size / 1024) + ' KB)');
+    toast('Native .docx downloaded (' + Math.round(blob.size / 1024) + ' KB)');
   }catch(e){
     console.error(e);
-    toast('Gagal membuat .docx: ' + e.message);
+    toast('Failed to create .docx: ' + e.message);
   }
 };
 
@@ -3393,7 +3387,7 @@ async function docxToHtml(file){
   const raw = docEntry.method === 0 ? docEntry.data : await inflateRaw(docEntry.data);
   const xml = new DOMParser().parseFromString(new TextDecoder().decode(raw), 'application/xml');
   const body = xml.getElementsByTagName('w:body')[0];
-  if(!body) throw new Error('Isi dokumen tidak terbaca');
+  if(!body) throw new Error('Document content could not be read');
   // map numId -> numbering format so bullets stay bullets
   const numMap = {};
   if(entries['word/numbering.xml']){
@@ -3514,18 +3508,19 @@ $('#fileDocx').addEventListener('change', async e => {
   try{
     toast('Membaca ' + f.name + '…');
     const html = await docxToHtml(f);
-    if(!html.trim()) throw new Error('Dokumen kosong');
+    if(!html.trim()) throw new Error('Empty document');
     editor.innerHTML = html;
     $('#docName').value = f.name.replace(/\.docx$/i, '');
     document.title = $('#docName').value + ' — Word Web';
     docId = 'doc-' + Date.now().toString(36);
     afterChange(); saveLocal(false);
-    toast('Berkas .docx dimuat');
+    toast('.docx file loaded');
   }catch(err){
     console.error(err);
-    toast('Gagal membaca .docx: ' + err.message);
+    toast('Failed to read .docx: ' + err.message);
   }
 });
+
 /* =========================================================================
    REVIEW, DESIGN, VIEWS, BACKSTAGE, INIT
    ========================================================================= */
@@ -3628,7 +3623,7 @@ $('#replaceAll').onclick = () => {
   }
   afterChange();
   collectHits(q);
-  $('#findCount').textContent = total + ' diganti';
+  $('#findCount').textContent = total + ' replaced';
 };
 ACTIONS.find = () => openFind(false);
 ACTIONS.replace = () => openFind(true);
@@ -3660,7 +3655,7 @@ $('#quickFind').addEventListener('keydown', e => { if(e.key === 'Escape'){ e.tar
 function toggleTrack(){
   trackOn = !trackOn;
   statusEls.track.classList.toggle('hidden', !trackOn);
-  toast(trackOn ? 'Lacak perubahan aktif — suntingan ditandai' : 'Lacak perubahan nonaktif');
+  toast(trackOn ? 'Track Changes on — edits are marked' : 'Track Changes off');
   afterChange();
 }
 ACTIONS.toggleTrack = toggleTrack;
@@ -3668,13 +3663,13 @@ ACTIONS.acceptAll = function(){
   $$('ins.trk', editor).forEach(el => el.replaceWith(...el.childNodes));
   $$('del.trk', editor).forEach(el => el.remove());
   afterChange();
-  toast('Semua perubahan diterima');
+  toast('All changes accepted');
 };
 ACTIONS.rejectAll = function(){
   $$('ins.trk', editor).forEach(el => el.remove());
   $$('del.trk', editor).forEach(el => el.replaceWith(...el.childNodes));
   afterChange();
-  toast('Semua perubahan ditolak');
+  toast('All changes rejected');
 };
 editor.addEventListener('beforeinput', e => {
   if(!trackOn) return;
@@ -3717,10 +3712,10 @@ function trackDelete(forward){
 /* ------------------------------ Comments ------------------------------ */
 ACTIONS.newComment = function(){
   const sel = getSelection();
-  if(!sel.rangeCount || sel.isCollapsed){ toast('Pilih teks yang ingin dikomentari'); return; }
+  if(!sel.rangeCount || sel.isCollapsed){ toast('Select the text to comment on'); return; }
   const quoted = sel.toString().slice(0, 60);
   const target = sel.getRangeAt(0).cloneRange();
-  ask('Komentar baru', 'Komentar untuk "' + quoted + '"', '').then(text => {
+  ask('New comment', 'Comment on "' + quoted + '"', '').then(text => {
     if(!text) return;
     const span = document.createElement('span');
     span.className = 'cmt-hl';
@@ -3737,23 +3732,23 @@ ACTIONS.showComments = showComments;
 function showComments(){
   const pane = $('#sidePane');
   pane.classList.add('show');
-  $('#sideTitle').textContent = 'Komentar';
+  $('#sideTitle').textContent = 'Comment';
   const marks = $$('.cmt-hl', editor);
   const body = $('#sideBody');
   if(!marks.length){
-    body.innerHTML = '<p style="color:var(--muted);font-size:12px">Belum ada komentar. Pilih teks lalu klik Komentar.</p>';
+    body.innerHTML = '<p style="color:var(--muted);font-size:12px">No comments yet. Select text and click Comment.</p>';
     return;
   }
   body.innerHTML = marks.map((m, i) =>
     '<div style="border:1px solid var(--border);border-radius:7px;padding:8px;margin-bottom:8px" data-cmt="' + m.id + '">'
-    + '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">Komentar ' + (i + 1) + '</div>'
+    + '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">Comment ' + (i + 1) + '</div>'
     + '<div style="font-size:11px;color:var(--muted);font-style:italic;border-left:2px solid var(--border);padding-left:6px;margin-bottom:6px">'
     + esc(m.textContent.slice(0, 70)) + '</div>'
     + '<div style="font-size:12.5px">' + esc(m.dataset.comment || '') + '</div>'
     + '<div style="margin-top:6px;display:flex;gap:6px">'
     + '<button class="mini" data-cmt-go="' + m.id + '">Lihat</button>'
-    + '<button class="mini" data-cmt-edit="' + m.id + '">Ubah</button>'
-    + '<button class="mini danger" data-cmt-del="' + m.id + '">Hapus</button></div></div>'
+    + '<button class="mini" data-cmt-edit="' + m.id + '">Edit</button>'
+    + '<button class="mini danger" data-cmt-del="' + m.id + '">Delete</button></div></div>'
   ).join('');
   body.onclick = e => {
     const go = e.target.closest('[data-cmt-go]');
@@ -3771,7 +3766,7 @@ function showComments(){
     if(ed){
       const el = document.getElementById(ed.dataset.cmtEdit);
       if(!el) return;
-      ask('Ubah komentar', 'Komentar', el.dataset.comment || '').then(t => {
+      ask('Edit comment', 'Comment', el.dataset.comment || '').then(t => {
         if(t === null) return;
         el.dataset.comment = t;
         afterChange(); showComments();
@@ -3782,7 +3777,7 @@ function showComments(){
 ACTIONS.deleteComments = function(){
   $$('.cmt-hl', editor).forEach(el => el.replaceWith(...el.childNodes));
   afterChange(); showComments();
-  toast('Semua komentar dihapus');
+  toast('All comments deleted');
 };
 ACTIONS.closeSide = function(){ $('#sidePane').classList.remove('show'); };
 
@@ -3795,7 +3790,7 @@ function hash(str){
 }
 ACTIONS.protect = function(){
   if(protectedDoc){
-    ask('Buka proteksi', 'Masukkan kata sandi', '').then(pw => {
+    ask('Unprotect', 'Enter the password', '').then(pw => {
       if(pw === null) return;
       if(hash(pw) === sessionStorage.getItem('wordweb.pw')){
         protectedDoc = false;
@@ -3803,24 +3798,24 @@ ACTIONS.protect = function(){
         docHeader.contentEditable = 'true';
         docFooter.contentEditable = 'true';
         toast('Proteksi dibuka');
-      } else toast('Kata sandi salah');
+      } else toast('Wrong password');
     });
     return;
   }
-  const body = '<div class="field"><label>Kata sandi</label><input type="password" id="pw1"></div>'
-    + '<div class="field"><label>Ulangi kata sandi</label><input type="password" id="pw2"></div>'
+  const body = '<div class="field"><label>Password</label><input type="password" id="pw1"></div>'
+    + '<div class="field"><label>Reenter password</label><input type="password" id="pw2"></div>'
     + '<p class="dlg-note">Proteksi ini hanya mencegah pengeditan di peramban ini — bukan enkripsi. Jangan gunakan untuk data rahasia.</p>';
   openDialog({
-    title:'Batasi pengeditan', body, okText:'Proteksi',
+    title:'Restrict editing', body, okText:'Proteksi',
     onOk: root => {
       const a = $('#pw1', root).value, b = $('#pw2', root).value;
-      if(!a || a !== b){ toast('Kata sandi tidak sama'); return false; }
+      if(!a || a !== b){ toast('Passwords do not match'); return false; }
       sessionStorage.setItem('wordweb.pw', hash(a));
       protectedDoc = true;
       editor.contentEditable = 'false';
       docHeader.contentEditable = 'false';
       docFooter.contentEditable = 'false';
-      toast('Dokumen diproteksi');
+      toast('Document is protected');
     }
   });
 };
@@ -3835,15 +3830,15 @@ ACTIONS.wordCount = function(){
   const pages = pageCount();
   const mins = Math.max(1, Math.round(words / 200));
   const body = '<table>'
-    + '<tr><td>Halaman</td><td><b>' + pages + '</b></td></tr>'
-    + '<tr><td>Kata</td><td><b>' + words.toLocaleString('id-ID') + '</b></td></tr>'
-    + '<tr><td>Karakter (tanpa spasi)</td><td><b>' + charsNoSpace.toLocaleString('id-ID') + '</b></td></tr>'
-    + '<tr><td>Karakter (dengan spasi)</td><td><b>' + chars.toLocaleString('id-ID') + '</b></td></tr>'
-    + '<tr><td>Paragraf</td><td><b>' + paras + '</b></td></tr>'
-    + '<tr><td>Baris</td><td><b>' + text.split(/\n/).length.toLocaleString('id-ID') + '</b></td></tr>'
-    + '<tr><td>Perkiraan waktu baca</td><td><b>' + mins + ' menit</b></td></tr>'
+    + '<tr><td>Pages</td><td><b>' + pages + '</b></td></tr>'
+    + '<tr><td>Words</td><td><b>' + words.toLocaleString('en-US') + '</b></td></tr>'
+    + '<tr><td>Characters (no spaces)</td><td><b>' + charsNoSpace.toLocaleString('en-US') + '</b></td></tr>'
+    + '<tr><td>Characters (with spaces)</td><td><b>' + chars.toLocaleString('en-US') + '</b></td></tr>'
+    + '<tr><td>Paragraph</td><td><b>' + paras + '</b></td></tr>'
+    + '<tr><td>Baris</td><td><b>' + text.split(/\n/).length.toLocaleString('en-US') + '</b></td></tr>'
+    + '<tr><td>Reading time</td><td><b>' + mins + ' menit</b></td></tr>'
     + '</table>';
-  openDialog({ title:'Statistik dokumen', body, okText:false, cancelText:'Tutup' });
+  openDialog({ title:'Document statistics', body, okText:false, cancelText:'Tutup' });
 };
 
 /* --------------------------- Spelling & language ---------------------- */
@@ -3851,16 +3846,16 @@ ACTIONS.toggleSpell = function(){
   settings.spell = !settings.spell;
   editor.spellcheck = settings.spell;
   saveSettings();
-  toast(settings.spell ? 'Pemeriksaan ejaan aktif' : 'Pemeriksaan ejaan nonaktif');
+  toast(settings.spell ? 'Spell check on' : 'Spell check off');
 };
 ACTIONS.setLang = function(){
-  const body = '<div class="field"><label>Bahasa dokumen</label><select id="langSel">'
-    + '<option value="id">Bahasa Indonesia</option>'
+  const body = '<div class="field"><label>Document language</label><select id="langSel">'
+    + '<option value="id">Indonesian</option>'
     + '<option value="en">English (US)</option>'
-    + '</select></div><p class="dlg-note">Memengaruhi pemeriksaan ejaan bawaan peramban.</p>';
+    + '</select></div><p class="dlg-note">Affects the built-in browser spell checker.</p>';
   openDialog({
-    title:'Bahasa', body, okText:'Terapkan',
-    onOpen: root => { $('#langSel', root).value = editor.getAttribute('lang') || 'id'; },
+    title:'Language', body, okText:'Apply',
+    onOpen: root => { $('#langSel', root).value = editor.getAttribute('lang') || 'en'; },
     onOk: root => {
       editor.setAttribute('lang', $('#langSel', root).value);
       updateStats();
@@ -3876,13 +3871,13 @@ const MARGIN_VALUES = {
 ACTIONS.customMargin = function(){
   const cm = v => Math.round(parseFloat(v) / 37.795 * 10) / 10;
   const body = '<div class="dlg-grid">'
-    + '<div class="field"><label>Atas (cm)</label><input id="mT" type="number" step="0.1" value="' + cm(pageSetup.padY) + '"></div>'
-    + '<div class="field"><label>Bawah (cm)</label><input id="mB" type="number" step="0.1" value="' + cm(pageSetup.padY) + '"></div>'
-    + '<div class="field"><label>Kiri (cm)</label><input id="mL" type="number" step="0.1" value="' + cm(pageSetup.padX) + '"></div>'
-    + '<div class="field"><label>Kanan (cm)</label><input id="mR" type="number" step="0.1" value="' + cm(pageSetup.padX) + '"></div>'
+    + '<div class="field"><label>Top (cm)</label><input id="mT" type="number" step="0.1" value="' + cm(pageSetup.padY) + '"></div>'
+    + '<div class="field"><label>Bottom (cm)</label><input id="mB" type="number" step="0.1" value="' + cm(pageSetup.padY) + '"></div>'
+    + '<div class="field"><label>Left (cm)</label><input id="mL" type="number" step="0.1" value="' + cm(pageSetup.padX) + '"></div>'
+    + '<div class="field"><label>Right (cm)</label><input id="mR" type="number" step="0.1" value="' + cm(pageSetup.padX) + '"></div>'
     + '</div>';
   openDialog({
-    title:'Margin khusus', body, okText:'Terapkan',
+    title:'Custom margins', body, okText:'Apply',
     onOk: root => {
       const t = parseFloat($('#mT', root).value) || 2, b = parseFloat($('#mB', root).value) || 2;
       const l = parseFloat($('#mL', root).value) || 2, r = parseFloat($('#mR', root).value) || 2;
@@ -3907,10 +3902,10 @@ ACTIONS.landscape = function(){
   applyPageSetup();
 };
 ACTIONS.columnsMenu = function(el){
-  const html = '<div class="pop-title">Kolom</div><div class="pop-list">'
-    + '<button data-col="1">Satu kolom</button><button data-col="2">Dua kolom</button>'
-    + '<button data-col="3">Tiga kolom</button><div class="pop-sep"></div>'
-    + '<button data-col="line">Garis pemisah kolom</button></div>';
+  const html = '<div class="pop-title">Columns</div><div class="pop-list">'
+    + '<button data-col="1">Satu columns</button><button data-col="2">Dua columns</button>'
+    + '<button data-col="3">Tiga columns</button><div class="pop-sep"></div>'
+    + '<button data-col="line">Garis pemisah columns</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
     const b = e.target.closest('[data-col]');
@@ -3919,34 +3914,34 @@ ACTIONS.columnsMenu = function(el){
     if(b.dataset.col === 'line') pageSetup.lineBetween = !pageSetup.lineBetween;
     else pageSetup.columns = parseInt(b.dataset.col, 10);
     applyPageSetup();
-    toast(pageSetup.columns > 1 ? pageSetup.columns + ' kolom' : 'Satu kolom');
+    toast(pageSetup.columns > 1 ? pageSetup.columns + ' columns' : 'One column');
   });
 };
 ACTIONS.toggleLineNumbers = function(){
   pageSetup.lineNumbers = !pageSetup.lineNumbers;
   applyPageSetup();
-  toast(pageSetup.lineNumbers ? 'Nomor baris aktif' : 'Nomor baris nonaktif');
+  toast(pageSetup.lineNumbers ? 'Line numbers on' : 'Line numbers off');
 };
 ACTIONS.toggleHyphen = function(){
   pageSetup.hyphen = !pageSetup.hyphen;
   applyPageSetup();
-  toast(pageSetup.hyphen ? 'Pemenggalan kata otomatis' : 'Pemenggalan kata nonaktif');
+  toast(pageSetup.hyphen ? 'Automatic hyphenation' : 'Hyphenation off');
 };
 ACTIONS.paraDialog = function(){
   const b = closestBlock(getSelection().anchorNode);
   const cs = b ? getComputedStyle(b) : null;
   const body = '<div class="dlg-grid">'
-    + '<div class="field"><label>Spasi sebelum (pt)</label><input id="pB" type="number" value="' + (cs ? Math.round(parseFloat(cs.marginTop) * 0.75) : 0) + '"></div>'
-    + '<div class="field"><label>Spasi sesudah (pt)</label><input id="pA" type="number" value="' + (cs ? Math.round(parseFloat(cs.marginBottom) * 0.75) : 8) + '"></div>'
-    + '<div class="field"><label>Jarak baris</label><select id="pL">'
+    + '<div class="field"><label>Spacing before (pt)</label><input id="pB" type="number" value="' + (cs ? Math.round(parseFloat(cs.marginTop) * 0.75) : 0) + '"></div>'
+    + '<div class="field"><label>Spacing after (pt)</label><input id="pA" type="number" value="' + (cs ? Math.round(parseFloat(cs.marginBottom) * 0.75) : 8) + '"></div>'
+    + '<div class="field"><label>Line spacing</label><select id="pL">'
     + ['1','1.15','1.5','2','2.5','3'].map(v => '<option value="' + v + '">' + v.replace('.', ',') + '</option>').join('')
     + '</select></div>'
-    + '<div class="field"><label>Indentasi kiri (cm)</label><input id="pIL" type="number" step="0.1" value="0"></div>'
-    + '<div class="field"><label>Indentasi kanan (cm)</label><input id="pIR" type="number" step="0.1" value="0"></div>'
-    + '<div class="field"><label>Baris pertama (cm)</label><input id="pIF" type="number" step="0.1" value="0"></div>'
-    + '</div><p class="dlg-note">Berlaku untuk paragraf yang dipilih atau paragraf di posisi kursor.</p>';
+    + '<div class="field"><label>Left indent (cm)</label><input id="pIL" type="number" step="0.1" value="0"></div>'
+    + '<div class="field"><label>Right indent (cm)</label><input id="pIR" type="number" step="0.1" value="0"></div>'
+    + '<div class="field"><label>First line (cm)</label><input id="pIF" type="number" step="0.1" value="0"></div>'
+    + '</div><p class="dlg-note">Applies to the selected paragraphs or the paragraph at the caret.</p>';
   openDialog({
-    title:'Indentasi dan spasi', body, okText:'Terapkan',
+    title:'Indent and spacing', body, okText:'Apply',
     onOk: root => {
       const before = parseFloat($('#pB', root).value) || 0;
       const after = parseFloat($('#pA', root).value) || 0;
@@ -3981,11 +3976,11 @@ function setParaSpacing(cls){
 }
 ACTIONS.watermark = function(){
   const wm = $('#watermark');
-  const body = '<div class="field"><label>Teks watermark</label><input id="wmText" value="'
+  const body = '<div class="field"><label>Watermark text</label><input id="wmText" value="'
     + esc($('#watermarkText').textContent || 'DRAF') + '"></div>'
-    + '<div class="field"><label>Ukuran</label><input id="wmSize" type="range" min="30" max="120" value="64"></div>';
+    + '<div class="field"><label>Size</label><input id="wmSize" type="range" min="30" max="120" value="64"></div>';
   openDialog({
-    title:'Watermark', body, okText:'Terapkan',
+    title:'Watermark', body, okText:'Apply',
     onOpen: root => {
       $('#wmSize', root).oninput = e => { $('#watermarkText').style.fontSize = e.target.value + 'pt'; };
     },
@@ -3999,8 +3994,8 @@ ACTIONS.watermark = function(){
   });
 };
 ACTIONS.pageBorderMenu = function(el){
-  const html = '<div class="pop-title">Batas halaman</div><div class="pop-list">'
-    + '<button data-pb="none">Tanpa batas</button><button data-pb="box">Kotak</button>'
+  const html = '<div class="pop-title">Page Borders</div><div class="pop-list">'
+    + '<button data-pb="none">None</button><button data-pb="box">Box</button>'
     + '<button data-pb="shadow">Bayangan</button><button data-pb="double">Garis ganda</button></div>';
   const p = openPopover(el, html);
   p.addEventListener('click', e => {
@@ -4024,7 +4019,7 @@ function applyTheme(id){
   root.setProperty('--accent-line', t.accent + '55');
   editor.style.fontFamily = t.font + ', Calibri, Arial, sans-serif';
   $$('h1,h2,h3', editor).forEach(h => h.style.fontFamily = t.head + ', Calibri, Arial, sans-serif');
-  toast('Tema ' + t.name + ' diterapkan');
+  toast('Theme ' + t.name + ' diterapkan');
 }
 function applyPalette(id){
   const p = PALETTES.find(x => x.id === id) || PALETTES[0];
@@ -4056,7 +4051,7 @@ ACTIONS.viewWeb = () => setView('web');
 ACTIONS.viewRead = () => setView('read');
 ACTIONS.focusMode = function(){
   document.body.classList.toggle('focusmode');
-  toast(document.body.classList.contains('focusmode') ? 'Mode fokus — tekan Esc untuk keluar' : 'Mode fokus nonaktif');
+  toast(document.body.classList.contains('focusmode') ? 'Focus mode — press Esc to exit' : 'Focus mode off');
 };
 ACTIONS.toggleRuler = function(){
   $('#rulerRow').classList.toggle('show');
@@ -4066,7 +4061,7 @@ ACTIONS.toggleRuler = function(){
 };
 ACTIONS.toggleGrid = function(){
   canvas.classList.toggle('gridlines');
-  toast(canvas.classList.contains('gridlines') ? 'Garis kisi aktif' : 'Garis kisi nonaktif');
+  toast(canvas.classList.contains('gridlines') ? 'Gridlines on' : 'Gridlines off');
 };
 ACTIONS.toggleNav = function(){
   const p = $('#navPane');
@@ -4101,42 +4096,42 @@ ACTIONS.autoSave = function(){
   settings.autosave = !settings.autosave;
   saveSettings();
   $('#autoSaveBtn').style.opacity = settings.autosave ? '1' : '.45';
-  toast(settings.autosave ? 'Simpan otomatis aktif' : 'Simpan otomatis nonaktif');
+  toast(settings.autosave ? 'AutoSave on' : 'AutoSave off');
   if(settings.autosave) saveLocal(true);
 };
 ACTIONS.share = function(){
-  const body = '<p>Dokumen ini berjalan sepenuhnya di peramban Anda — tidak ada server, jadi tidak ada tautan berbagi.</p>'
+  const body = '<p>This document runs entirely in your browser — there is no server, so there is no share link.</p>'
     + '<p>Bagikan dengan salah satu cara:</p>'
     + '<ul style="margin:0 0 10px 18px;padding:0">'
     + '<li>Unduh <b>.html</b> — tetap utuh saat dibuka di peramban lain.</li>'
     + '<li>Unduh <b>.doc</b> — dibuka di Microsoft Word.</li>'
-    + '<li>Cetak / simpan <b>PDF</b>.</li>'
-    + '<li>Salin teks ke surel atau pesan.</li></ul>';
+    + '<li>Print / save as <b>PDF</b>.</li>'
+    + '<li>Copy text to email or messages.</li></ul>';
   openDialog({
-    title:'Bagikan', body, okText:'Unduh HTML', cancelText:'Tutup',
+    title:'Bagikan', body, okText:'Download HTML', cancelText:'Tutup',
     onOk: () => saveHtmlFile()
   });
 };
 ACTIONS.help = function(){
   const rows = [
-    ['Ctrl + B / I / U', 'Tebal / miring / garis bawah'],
+    ['Ctrl + B / I / U', 'Bold / italic / underline'],
     ['Ctrl + Shift + X', 'Coret teks'],
-    ['Ctrl + Alt + 1…3', 'Judul 1–3'],
-    ['Ctrl + Alt + 0', 'Kembali ke paragraf biasa'],
-    ['Ctrl + Shift + L / 7', 'Daftar butir / bernomor'],
-    ['Ctrl + Enter', 'Hentian halaman'],
-    ['Ctrl + S / Shift+S', 'Simpan / simpan sebagai'],
-    ['Ctrl + P', 'Cetak atau simpan PDF'],
-    ['Ctrl + F / H', 'Cari / ganti'],
-    ['Ctrl + K', 'Sisipkan tautan'],
-    ['F7', 'Pemeriksaan ejaan'],
+    ['Ctrl + Alt + 1…3', 'Heading 1-3'],
+    ['Ctrl + Alt + 0', 'Back to normal paragraph'],
+    ['Ctrl + Shift + L / 7', 'Bulleted / numbered list'],
+    ['Ctrl + Enter', 'Page Break'],
+    ['Ctrl + S / Shift+S', 'Save / Save As'],
+    ['Ctrl + P', 'Print or save as PDF'],
+    ['Ctrl + F / H', 'Find and Replace'],
+    ['Ctrl + K', 'Insert a link'],
+    ['F7', 'Spelling'],
     ['Ctrl + Z / Y', 'Urungkan / ulangi'],
-    ['Tab (di daftar)', 'Turunkan tingkat daftar'],
-    ['Esc', 'Keluar mode fokus / tutup panel']
+    ['Tab (in list)', 'Demote list level'],
+    ['Esc', 'Exit focus mode / close pane']
   ];
   const body = '<table>' + rows.map(r => '<tr><td><kbd>' + r[0] + '</kbd></td><td>' + r[1] + '</td></tr>').join('') + '</table>'
-    + '<p class="dlg-note">Klik kanan di dokumen untuk menu konteks. Pilih teks untuk bilah alat mini.</p>';
-  openDialog({ title:'Pintasan papan tombol', body, okText:false, cancelText:'Tutup' });
+    + '<p class="dlg-note">Right-click in the document for the context menu. Select text for the mini toolbar.</p>';
+  openDialog({ title:'Keyboard shortcuts', body, okText:false, cancelText:'Tutup' });
 };
 
 /* --------------------------- Compare documents ------------------------ */
@@ -4155,12 +4150,12 @@ ACTIONS.compareDoc = function(){
       const otherSet = new Set(other), mineSet = new Set(mine);
       const added = mine.filter(l => !otherSet.has(l));
       const removed = other.filter(l => !mineSet.has(l));
-      const body = '<p><b>' + added.length + '</b> baris hanya ada di dokumen ini, <b>' + removed.length + '</b> baris hanya ada di berkas pembanding.</p>'
-        + (added.length ? '<h4 style="margin:10px 0 4px">Hanya di sini</h4><div style="max-height:160px;overflow:auto;font-size:12px">'
+      const body = '<p><b>' + added.length + '</b> lines exist only in this document, <b>' + removed.length + '</b> baris hanya ada di berkas pembanding.</p>'
+        + (added.length ? '<h4 style="margin:10px 0 4px">Only in this document</h4><div style="max-height:160px;overflow:auto;font-size:12px">'
           + added.map(l => '<div style="background:#e7f6ec;padding:2px 6px;border-radius:3px;margin-bottom:2px">' + esc(l) + '</div>').join('') + '</div>' : '')
-        + (removed.length ? '<h4 style="margin:10px 0 4px">Hanya di berkas pembanding</h4><div style="max-height:160px;overflow:auto;font-size:12px">'
+        + (removed.length ? '<h4 style="margin:10px 0 4px">Only in the compared file</h4><div style="max-height:160px;overflow:auto;font-size:12px">'
           + removed.map(l => '<div style="background:#fdecea;padding:2px 6px;border-radius:3px;margin-bottom:2px">' + esc(l) + '</div>').join('') + '</div>' : '');
-      openDialog({ title:'Bandingkan: ' + esc(f.name), body, okText:false, cancelText:'Tutup' });
+      openDialog({ title:'Compare: ' + esc(f.name), body, okText:false, cancelText:'Tutup' });
     };
     reader.readAsText(f);
   };
@@ -4183,8 +4178,8 @@ function showMiniBar(){
     + '<button class="mini" data-maction="growFont">A+</button>'
     + '<button class="mini" data-maction="shrinkFont">A−</button>'
     + '<button class="mini" data-maction="hilite">Sorot</button>'
-    + '<button class="mini" data-maction="link">Tautan</button>'
-    + '<button class="mini" data-maction="newComment">Komentar</button>'
+    + '<button class="mini" data-maction="link">Link</button>'
+    + '<button class="mini" data-maction="newComment">Comment</button>'
     + '<button class="mini" data-maction="formatPainter">Format</button>';
   miniBar.classList.add('show');
   const bw = miniBar.offsetWidth, bh = miniBar.offsetHeight;
@@ -4218,19 +4213,19 @@ editor.addEventListener('contextmenu', e => {
   const sel = getSelection();
   const hasSel = sel.rangeCount && !sel.isCollapsed;
   const inTable = !!currentCell();
-  ctx.innerHTML = '<button data-c="cut">Potong <span class="sc">Ctrl+X</span></button>'
-    + '<button data-c="copy">Salin <span class="sc">Ctrl+C</span></button>'
-    + '<button data-c="paste">Tempel <span class="sc">Ctrl+V</span></button>'
-    + '<button data-c="plain">Tempel teks biasa</button>'
+  ctx.innerHTML = '<button data-c="cut">Cut <span class="sc">Ctrl+X</span></button>'
+    + '<button data-c="copy">Copy <span class="sc">Ctrl+C</span></button>'
+    + '<button data-c="paste">Paste <span class="sc">Ctrl+V</span></button>'
+    + '<button data-c="plain">Paste plain text</button>'
     + '<hr><button data-c="bold">Tebal <span class="sc">Ctrl+B</span></button>'
     + '<button data-c="italic">Miring <span class="sc">Ctrl+I</span></button>'
-    + '<button data-c="underline">Garis bawah <span class="sc">Ctrl+U</span></button>'
-    + '<hr><button data-c="link">Tautan…</button>'
-    + '<button data-c="comment">Komentar baru…</button>'
+    + '<button data-c="underline">Underline <span class="sc">Ctrl+U</span></button>'
+    + '<hr><button data-c="link">Link...</button>'
+    + '<button data-c="comment">Comment baru…</button>'
     + '<button data-c="font">Font…</button>'
-    + '<button data-c="para">Paragraf…</button>'
-    + (inTable ? '<hr><button data-c="delTable">Hapus tabel</button>' : '')
-    + '<hr><button data-c="selectAll">Pilih semua <span class="sc">Ctrl+A</span></button>';
+    + '<button data-c="para">Paragraph...</button>'
+    + (inTable ? '<hr><button data-c="delTable">Delete table</button>' : '')
+    + '<hr><button data-c="selectAll">Select All <span class="sc">Ctrl+A</span></button>';
   ctx.classList.add('show');
   const cw = ctx.offsetWidth, ch = ctx.offsetHeight;
   ctx.style.left = Math.min(e.clientX, window.innerWidth - cw - 8) + 'px';
@@ -4268,18 +4263,18 @@ document.addEventListener('mousedown', e => {
 const backstage = $('#backstage');
 let bsView = 'new';
 const TEMPLATES = {
-  blank: { name:'Dokumen kosong', desc:'Mulai dari nol', html:'<p><br></p>' },
-  surat: { name:'Surat resmi', desc:'Kop, nomor, alamat tujuan', html:
+  blank: { name:'Empty document', desc:'Mulai dari nol', html:'<p><br></p>' },
+  surat: { name:'Formal Letter', desc:'Letterhead, number, recipient', html:
     '<p style="text-align:center;font-weight:600;font-size:13pt;margin-bottom:2pt">NAMA PERUSAHAAN</p>'
     + '<p style="text-align:center;font-size:9pt;color:#5b6470;margin-bottom:14pt">Jalan Contoh No. 1, Jakarta · (021) 1234567 · info@contoh.co.id</p>'
     + '<hr><p style="text-align:right">Jakarta, ' + new Date().toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' }) + '</p>'
-    + '<p>Nomor: 001/HRD/X/2026<br>Lampiran: —<br>Perihal: <b>Undangan Rapat</b></p>'
-    + '<p>Kepada Yth.<br>Bapak/Ibu Pimpinan<br>di tempat</p>'
+    + '<p>Ref: 001/HRD/X/2026<br>Attachment: -<br>Subject: <b>Meeting Invitation</b></p>'
+    + '<p>To<br>Bapak/Ibu Pimpinan<br>di tempat</p>'
     + '<p>Dengan hormat,</p>'
     + '<p>Sehubungan dengan evaluasi kinerja triwulan III, kami mengundang Bapak/Ibu untuk hadir pada rapat yang akan dilaksanakan pada hari Senin, 26 Oktober 2026 pukul 09.00 WIB di Ruang Rapat Utama.</p>'
-    + '<p>Demikian undangan ini kami sampaikan. Atas perhatian dan kehadirannya kami ucapkan terima kasih.</p>'
+    + '<p>Thank you for your attention. We look forward to your attendance.</p>'
     + '<p style="margin-top:24pt">Hormat kami,<br><br><br><b>Nama Penandatangan</b><br>Manajer SDM</p>' },
-  laporan: { name:'Laporan', desc:'Ringkasan, tabel, tindak lanjut', html:
+  laporan: { name:'Laporan', desc:'Summary, table, follow-ups', html:
     '<h1>Laporan Kegiatan</h1><p style="color:#5b6470">Periode: Oktober 2026</p>'
     + '<h2>1. Ringkasan</h2><p>Tuliskan ringkasan singkat hasil kegiatan pada periode ini.</p>'
     + '<h2>2. Rincian</h2><table><thead><tr><th>Kegiatan</th><th>Target</th><th>Capaian</th></tr></thead>'
@@ -4291,8 +4286,8 @@ const TEMPLATES = {
     + '<h2>Pengalaman Kerja</h2><p><b>Nama Perusahaan</b> — Jabatan<br><i>2022 – sekarang</i></p><ul><li>Pencapaian utama</li><li>Tanggung jawab</li></ul>'
     + '<h2>Pendidikan</h2><p><b>Universitas</b> — Program Studi<br><i>2016 – 2020</i></p>'
     + '<h2>Keahlian</h2><ul><li>Keahlian 1</li><li>Keahlian 2</li></ul>' },
-  notulen: { name:'Notulen rapat', desc:'Peserta, agenda, keputusan', html:
-    '<h1>Notulen Rapat</h1>'
+  notulen: { name:'Meeting Minutes', desc:'Peserta, agenda, keputusan', html:
+    '<h1>Meeting Minutes</h1>'
     + '<p><b>Hari/Tanggal:</b> Senin, 26 Oktober 2026<br><b>Waktu:</b> 09.00 – 11.00 WIB<br><b>Tempat:</b> Ruang Rapat Utama<br><b>Pemimpin rapat:</b> —</p>'
     + '<h2>Peserta</h2><ol><li>&nbsp;</li><li>&nbsp;</li></ol>'
     + '<h2>Agenda</h2><ol><li>&nbsp;</li><li>&nbsp;</li></ol>'
@@ -4309,12 +4304,12 @@ function closeBackstage(){ backstage.classList.add('hidden'); }
 function renderBackstage(view){
   bsView = view;
   const menu = [
-    ['new','Baru'], ['open','Buka'], ['info','Info'], ['save','Simpan'],
-    ['saveas','Simpan sebagai'], ['print','Cetak'], ['export','Ekspor'], ['options','Opsi']
+    ['new','Baru'], ['open','Buka'], ['info','Info'], ['save','Save'],
+    ['saveas','Save As'], ['print','Print'], ['export','Ekspor'], ['options','Opsi']
   ];
   backstage.innerHTML = '<div class="bs-menu">'
     + menu.map(m => '<button data-bs="' + m[0] + '"' + (m[0] === view ? ' class="on"' : '') + '>' + m[1] + '</button>').join('')
-    + '<button class="bs-close" data-bs="close">Tutup dokumen</button></div>'
+    + '<button class="bs-close" data-bs="close">Close document</button></div>'
     + '<div class="bs-body" id="bsBody"></div>';
   backstage.querySelector('.bs-menu').addEventListener('click', e => {
     const b = e.target.closest('[data-bs]');
@@ -4324,7 +4319,7 @@ function renderBackstage(view){
   });
   const body = $('#bsBody');
   if(view === 'new'){
-    body.innerHTML = '<h2>Baru</h2><p class="sub">Mulai dari dokumen kosong atau templat siap pakai.</p>'
+    body.innerHTML = '<h2>New</h2><p class="sub">Start from an empty document or a ready-made template.</p>'
       + '<div class="bs-grid">' + Object.keys(TEMPLATES).map(k => {
         const t = TEMPLATES[k];
         return '<button class="tpl" data-tpl="' + k + '"><div class="thumb"><i class="t"></i><i></i><i></i><i style="width:70%"></i></div>'
@@ -4337,13 +4332,13 @@ function renderBackstage(view){
     });
   } else if(view === 'open'){
     const docs = listDocs();
-    body.innerHTML = '<h2>Buka</h2><p class="sub">Dokumen tersimpan di peramban ini, atau buka berkas dari komputer.</p>'
-      + '<div style="margin-bottom:16px"><button class="mini primary" id="bsOpenFile">Buka berkas dari komputer…</button></div>'
+    body.innerHTML = '<h2>Open</h2><p class="sub">Documents are saved in this browser, or open a file from your computer.</p>'
+      + '<div style="margin-bottom:16px"><button class="mini primary" id="bsOpenFile">Open a file from your computer...</button></div>'
       + '<div class="doclist">' + (docs.length ? docs.map(d =>
         '<div class="docrow" data-doc="' + d.id + '"><span class="nm">' + esc(d.name) + '</span>'
-        + '<span class="dt">' + new Date(d.updated).toLocaleString('id-ID') + '</span>'
-        + '<button class="mini" data-del="' + d.id + '">Hapus</button></div>').join('')
-        : '<p class="sub">Belum ada dokumen tersimpan.</p>') + '</div>';
+        + '<span class="dt">' + new Date(d.updated).toLocaleString('en-US') + '</span>'
+        + '<button class="mini" data-del="' + d.id + '">Delete</button></div>').join('')
+        : '<p class="sub">No saved documents yet.</p>') + '</div>';
     $('#bsOpenFile').onclick = () => { closeBackstage(); openFileDialog(); };
     body.addEventListener('click', e => {
       const del = e.target.closest('[data-del]');
@@ -4356,47 +4351,47 @@ function renderBackstage(view){
       const row = e.target.closest('[data-doc]');
       if(row){
         const rec = listDocs().find(d => d.id === row.dataset.doc);
-        if(rec){ loadDoc(rec); closeBackstage(); switchTab('home'); toast('Dokumen dibuka'); }
+        if(rec){ loadDoc(rec); closeBackstage(); switchTab('home'); toast('Document opened'); }
       }
     });
   } else if(view === 'info'){
     const text = editor.innerText || '';
     const words = text.trim() ? text.trim().split(/\s+/).filter(Boolean).length : 0;
-    body.innerHTML = '<h2>Info</h2><p class="sub">Properti dan statistik dokumen.</p>'
+    body.innerHTML = '<h2>Info</h2><p class="sub">Document properties and statistics.</p>'
       + '<div class="bs-row">'
-      + '<div class="bs-card"><h3>Dokumen</h3>'
+      + '<div class="bs-card"><h3>Document</h3>'
       + '<div class="field"><label>Nama</label><input id="infoName" value="' + esc($('#docName').value) + '"></div>'
       + '<div class="field"><label>Penulis</label><input id="infoAuthor" value="' + esc(settings.author) + '"></div>'
-      + '<div class="kv"><span>Halaman</span><b>' + pageCount() + '</b></div>'
-      + '<div class="kv"><span>Kata</span><b>' + words.toLocaleString('id-ID') + '</b></div>'
-      + '<div class="kv"><span>Karakter</span><b>' + text.length.toLocaleString('id-ID') + '</b></div>'
-      + '<div class="kv"><span>Ukuran kertas</span><b>' + pageSetup.size.toUpperCase() + ' · ' + (pageSetup.orient === 'portrait' ? 'potret' : 'lansekap') + '</b></div>'
+      + '<div class="kv"><span>Pages</span><b>' + pageCount() + '</b></div>'
+      + '<div class="kv"><span>Words</span><b>' + words.toLocaleString('en-US') + '</b></div>'
+      + '<div class="kv"><span>Characters</span><b>' + text.length.toLocaleString('en-US') + '</b></div>'
+      + '<div class="kv"><span>Paper Size</span><b>' + pageSetup.size.toUpperCase() + ' · ' + (pageSetup.orient === 'portrait' ? 'portrait' : 'landscape') + '</b></div>'
       + '</div>'
       + '<div class="bs-card"><h3>Lokasi simpan</h3><p style="font-size:12.5px;margin:0 0 8px">Penyimpanan lokal peramban (localStorage). Tidak diunggah ke mana pun.</p>'
-      + '<div class="kv"><span>Simpan otomatis</span><b>' + (settings.autosave ? 'Aktif' : 'Nonaktif') + '</b></div>'
-      + '<div class="kv"><span>Ejaan</span><b>' + (settings.spell ? 'Aktif' : 'Nonaktif') + '</b></div>'
-      + '<div class="kv"><span>Bahasa</span><b>' + (editor.getAttribute('lang') === 'en' ? 'English' : 'Indonesia') + '</b></div>'
+      + '<div class="kv"><span>AutoSave</span><b>' + (settings.autosave ? 'On' : 'Off') + '</b></div>'
+      + '<div class="kv"><span>Spelling</span><b>' + (settings.spell ? 'On' : 'Off') + '</b></div>'
+      + '<div class="kv"><span>Language</span><b>' + (editor.getAttribute('lang') === 'en' ? 'English' : 'Indonesia') + '</b></div>'
       + '</div></div>'
-      + '<button class="mini primary" id="infoSave">Simpan properti</button>';
+      + '<button class="mini primary" id="infoSave">Save properties</button>';
     $('#infoSave').onclick = () => {
       $('#docName').value = $('#infoName').value;
       settings.author = $('#infoAuthor').value;
       saveSettings(); saveLocal(false);
       document.title = $('#docName').value + ' — Word Web';
-      toast('Properti disimpan');
+      toast('Properties saved');
     };
   } else if(view === 'save'){
-    body.innerHTML = '<h2>Simpan</h2><p class="sub">Dokumen disimpan otomatis di peramban ini.</p>'
-      + '<p>Untuk berkas nyata, gunakan <b>Simpan sebagai</b> atau <b>Ekspor</b>.</p>'
-      + '<button class="mini primary" id="bsSaveNow">Simpan sekarang</button>';
-    $('#bsSaveNow').onclick = () => { saveLocal(false); toast('Tersimpan di peramban'); };
+    body.innerHTML = '<h2>Save</h2><p class="sub">The document is saved automatically in this browser.</p>'
+      + '<p>For a real file, use <b>Save As</b> or <b>Export</b>.</p>'
+      + '<button class="mini primary" id="bsSaveNow">Save now</button>';
+    $('#bsSaveNow').onclick = () => { saveLocal(false); toast('Saved in this browser'); };
   } else if(view === 'saveas'){
-    body.innerHTML = '<h2>Simpan sebagai</h2><p class="sub">Pilih format berkas.</p>'
+    body.innerHTML = '<h2>Save As</h2><p class="sub">Choose a file format.</p>'
       + '<div class="bs-grid">'
-      + '<button class="tpl" data-fmt="docx"><b>Dokumen Word (.docx)</b><span>Format OOXML asli — paling kompatibel</span></button>'
-      + '<button class="tpl" data-fmt="html"><b>Halaman web (.html)</b><span>Satu berkas, bisa dibuka di mana saja</span></button>'
-      + '<button class="tpl" data-fmt="doc"><b>Dokumen Word (.doc)</b><span>HTML ber-MIME Word</span></button>'
-      + '<button class="tpl" data-fmt="txt"><b>Teks biasa (.txt)</b><span>Tanpa format</span></button>'
+      + '<button class="tpl" data-fmt="docx"><b>Word Document (.docx)</b><span>Native OOXML — most compatible</span></button>'
+      + '<button class="tpl" data-fmt="html"><b>Web Page (.html)</b><span>Single file, opens anywhere</span></button>'
+      + '<button class="tpl" data-fmt="doc"><b>Word Document (.doc)</b><span>Word MIME HTML</span></button>'
+      + '<button class="tpl" data-fmt="txt"><b>Plain Text (.txt)</b><span>No formatting</span></button>'
       + '<button class="tpl" data-fmt="md"><b>Markdown (.md)</b><span>Untuk dokumentasi</span></button>'
       + '</div>';
     body.addEventListener('click', e => {
@@ -4410,22 +4405,22 @@ function renderBackstage(view){
       if(f === 'md') exportMd();
     });
   } else if(view === 'print'){
-    body.innerHTML = '<h2>Cetak</h2><p class="sub">Gunakan dialog cetak peramban untuk mencetak atau menyimpan sebagai PDF.</p>'
+    body.innerHTML = '<h2>Print</h2><p class="sub">Use the browser print dialog to print or save as PDF.</p>'
       + '<div class="bs-card" style="max-width:420px"><div class="kv"><span>Kertas</span><b>' + pageSetup.size.toUpperCase() + '</b></div>'
-      + '<div class="kv"><span>Orientasi</span><b>' + (pageSetup.orient === 'portrait' ? 'Potret' : 'Lansekap') + '</b></div>'
-      + '<div class="kv"><span>Margin</span><b>' + pageSetup.padX + ' × ' + pageSetup.padY + '</b></div>'
-      + '<div class="kv"><span>Perkiraan halaman</span><b>' + pageCount() + '</b></div></div>'
-      + '<p style="margin-top:14px"><button class="mini primary" id="bsPrint">Cetak / Simpan PDF</button></p>';
+      + '<div class="kv"><span>Orientation</span><b>' + (pageSetup.orient === 'portrait' ? 'Portrait' : 'Landscape') + '</b></div>'
+      + '<div class="kv"><span>Margins</span><b>' + pageSetup.padX + ' × ' + pageSetup.padY + '</b></div>'
+      + '<div class="kv"><span>Estimated pages</span><b>' + pageCount() + '</b></div></div>'
+      + '<p style="margin-top:14px"><button class="mini primary" id="bsPrint">Print / Save PDF</button></p>';
     $('#bsPrint').onclick = () => { closeBackstage(); printDoc(); };
   } else if(view === 'export'){
-    body.innerHTML = '<h2>Ekspor</h2><p class="sub">Buat berkas dari dokumen ini.</p>'
+    body.innerHTML = '<h2>Export</h2><p class="sub">Create a file from this document.</p>'
       + '<div class="bs-grid">'
       + '<button class="tpl" data-fmt="docx"><b>.docx</b><span>Word asli (OOXML)</span></button>'
       + '<button class="tpl" data-fmt="doc"><b>.doc</b><span>HTML ber-MIME Word</span></button>'
       + '<button class="tpl" data-fmt="html"><b>.html</b><span>Arsip mandiri</span></button>'
       + '<button class="tpl" data-fmt="md"><b>.md</b><span>Markdown</span></button>'
       + '<button class="tpl" data-fmt="txt"><b>.txt</b><span>Teks polos</span></button>'
-      + '<button class="tpl" data-fmt="pdf"><b>PDF</b><span>Lewat dialog cetak</span></button>'
+      + '<button class="tpl" data-fmt="pdf"><b>PDF</b><span>Via the print dialog</span></button>'
       + '</div>';
     body.addEventListener('click', e => {
       const b = e.target.closest('[data-fmt]');
@@ -4439,18 +4434,18 @@ function renderBackstage(view){
       if(f === 'pdf'){ closeBackstage(); printDoc(); }
     });
   } else if(view === 'options'){
-    body.innerHTML = '<h2>Opsi</h2><p class="sub">Preferensi yang tersimpan di peramban ini.</p>'
+    body.innerHTML = '<h2>Options</h2><p class="sub">Preferences stored in this browser.</p>'
       + '<div class="bs-row"><div class="bs-card"><h3>Umum</h3>'
       + '<div class="field"><label>Nama penulis</label><input id="optAuthor" value="' + esc(settings.author) + '"></div>'
       + '<div class="field"><label>Font default</label><select id="optFont">' + FONTS.map(f => '<option' + (f === settings.font ? ' selected' : '') + '>' + f + '</option>').join('') + '</select></div>'
-      + '<div class="field"><label>Ukuran default (pt)</label><select id="optSize">' + SIZES.map(s => '<option' + (s === settings.size ? ' selected' : '') + '>' + s + '</option>').join('') + '</select></div>'
+      + '<div class="field"><label>Default size (pt)</label><select id="optSize">' + SIZES.map(s => '<option' + (s === settings.size ? ' selected' : '') + '>' + s + '</option>').join('') + '</select></div>'
       + '</div><div class="bs-card"><h3>Perilaku</h3>'
       + '<label style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><input type="checkbox" id="optAuto"' + (settings.autosave ? ' checked' : '') + '> Simpan otomatis</label>'
       + '<label style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><input type="checkbox" id="optSpell"' + (settings.spell ? ' checked' : '') + '> Periksa ejaan</label>'
       + '<label style="display:flex;gap:8px;align-items:center;margin-bottom:8px"><input type="checkbox" id="optMarks"' + (settings.marks ? ' checked' : '') + '> Tampilkan tanda format</label>'
       + '<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="optRuler"' + (settings.ruler ? ' checked' : '') + '> Tampilkan penggaris</label>'
       + '</div></div>'
-      + '<button class="mini primary" id="optSave">Simpan opsi</button>';
+      + '<button class="mini primary" id="optSave">Save options</button>';
     $('#optSave').onclick = () => {
       settings.author = $('#optAuthor').value;
       settings.font = $('#optFont').value;
@@ -4464,7 +4459,7 @@ function renderBackstage(view){
       editor.classList.toggle('marks', settings.marks);
       $('#rulerRow').classList.toggle('show', settings.ruler);
       $('#autoSaveBtn').style.opacity = settings.autosave ? '1' : '.45';
-      toast('Opsi disimpan');
+      toast('Options saved');
     };
   }
 }
@@ -4475,7 +4470,7 @@ function newDocument(tplKey){
   docHeader.innerHTML = ''; docFooter.innerHTML = '';
   docHeader.classList.add('off'); docFooter.classList.add('off');
   $('#watermark').classList.remove('show');
-  $('#docName').value = tplKey === 'blank' ? 'Dokumen Tanpa Judul' : t.name;
+  $('#docName').value = tplKey === 'blank' ? 'Document1' : t.name;
   document.title = $('#docName').value + ' — Word Web';
   editor.style.fontFamily = settings.font + ', Calibri, Arial, sans-serif';
   editor.style.fontSize = settings.size + 'pt';
@@ -4517,7 +4512,7 @@ document.addEventListener('keydown', e => {
     if(k === '7'){ e.preventDefault(); exec('insertOrderedList'); return; }
     if(k === 'v'){ return; }
   }
-  if(e.key === 'F7'){ e.preventDefault(); editor.spellcheck = true; toast('Pemeriksaan ejaan aktif — garis bawah merah dari peramban'); return; }
+  if(e.key === 'F7'){ e.preventDefault(); editor.spellcheck = true; toast('Spell check on — red underlines from the browser'); return; }
   if(e.key === 'Enter' && ctrl && !e.shiftKey){ e.preventDefault(); ACTIONS.pageBreak(); return; }
   if(e.key === 'Tab' && !ctrl && !e.altKey && document.activeElement === editor){
     const li = caretNode() && caretNode().closest ? caretNode().closest('li') : null;
@@ -4562,7 +4557,7 @@ ribbon.addEventListener('change', e => {
     }
     case 'pageSize': {
       if(el.value === 'custom'){
-        ask('Ukuran kertas khusus', 'Masukkan ukuran (mis. 21cm x 29.7cm)', '21cm x 29.7cm').then(v => {
+        ask('Custom paper size', 'Enter the size (e.g. 21cm x 29.7cm)', '21cm x 29.7cm').then(v => {
           if(!v) return;
           const m = v.split(/x|×/);
           if(m.length === 2){ pageSetup.w = m[0].trim(); pageSetup.h = m[1].trim(); applyPageSetup(); }
@@ -4614,25 +4609,25 @@ window.addEventListener('resize', () => { updateTableBar(); updateObjBar(); draw
 /* -------------------------------- Init -------------------------------- */
 const WELCOME = ''
   + '<h1>Word Web</h1>'
-  + '<p style="color:#5b6470">Pengolah kata lengkap dalam satu berkas HTML — tanpa instalasi, tanpa server, tanpa koneksi internet.</p>'
-  + '<h2>Yang bisa Anda lakukan</h2>'
+  + '<p style="color:#5b6470">A complete word processor in a single HTML file — no installation, no server, no internet connection.</p>'
+  + '<h2>What you can do</h2>'
   + '<ul>'
-  + '<li>Format teks lengkap: <b>tebal</b>, <i>miring</i>, <u>garis bawah</u>, <s>coret</s>, subskrip, superskrip, warna, sorotan, efek teks</li>'
-  + '<li>Gaya paragraf, daftar bertingkat, jarak baris, batas dan warna paragraf</li>'
-  + '<li>Tabel dengan gabung/pisah sel, gambar, bentuk, bagan, kotak teks, WordArt, drop cap</li>'
-  + '<li>Header, footer, nomor halaman, watermark, batas halaman, kolom koran</li>'
-  + '<li>Daftar isi otomatis, catatan kaki, kutipan dan daftar pustaka</li>'
-  + '<li>Komentar, lacak perubahan, statistik dokumen, proteksi pengeditan</li>'
-  + '<li>Ekspor <b>.doc</b> (dibuka di Word), <b>.html</b>, <b>.md</b>, <b>.txt</b>, serta PDF lewat cetak</li>'
+  + '<li>Full text formatting: <b>bold</b>, <i>italic</i>, <u>underline</u>, <s>strikethrough</s>, subscript, superscript, color, highlight, text effects</li>'
+  + '<li>Paragraph styles, multilevel lists, line spacing, paragraph borders and shading</li>'
+  + '<li>Tables with merge/split cells, pictures, shapes, charts, text boxes, WordArt, drop caps</li>'
+  + '<li>Headers, footers, page numbers, watermarks, page borders, newspaper columns</li>'
+  + '<li>Automatic table of contents, footnotes, citations and bibliography</li>'
+  + '<li>Comments, track changes, document statistics, editing protection</li>'
+  + '<li>Export <b>.docx</b> (opens in Word), <b>.doc</b>, <b>.html</b>, <b>.md</b>, <b>.txt</b>, and PDF via print</li>'
   + '</ul>'
-  + '<h2>Mulai cepat</h2>'
-  + '<table><thead><tr><th>Ingin</th><th>Lakukan</th></tr></thead><tbody>'
-  + '<tr><td>Menebalkan teks</td><td>Pilih teks, tekan <b>Ctrl</b> + <b>B</b></td></tr>'
-  + '<tr><td>Membuat judul</td><td><b>Ctrl</b> + <b>Alt</b> + <b>1</b> sampai <b>3</b></td></tr>'
-  + '<tr><td>Mencari kata</td><td><b>Ctrl</b> + <b>F</b>, ganti dengan <b>Ctrl</b> + <b>H</b></td></tr>'
-  + '<tr><td>Menyimpan</td><td><b>Ctrl</b> + <b>S</b> untuk HTML, tab <b>Berkas</b> untuk format lain</td></tr>'
+  + '<h2>Quick start</h2>'
+  + '<table><thead><tr><th>Goal</th><th>How</th></tr></thead><tbody>'
+  + '<tr><td>Bold text</td><td>Select text, press <b>Ctrl</b> + <b>B</b></td></tr>'
+  + '<tr><td>Create a heading</td><td><b>Ctrl</b> + <b>Alt</b> + <b>1</b> sampai <b>3</b></td></tr>'
+  + '<tr><td>Find text</td><td><b>Ctrl</b> + <b>F</b>, replace with <b>Ctrl</b> + <b>H</b></td></tr>'
+  + '<tr><td>Save</td><td><b>Ctrl</b> + <b>S</b> untuk HTML, tab <b>Berkas</b> untuk format lain</td></tr>'
   + '</tbody></table>'
-  + '<p>Buka tab <b>Berkas</b> untuk templat surat, laporan, CV, dan notulen. Selamat menulis.</p>'
+  + '<p>Open the <b>File</b> tab for letter, report, CV, and minutes templates. Happy writing.</p>'
   + '<p><br></p>';
 
 function init(){
@@ -4655,7 +4650,7 @@ function init(){
     editor.innerHTML = rec.html;
     docHeader.innerHTML = rec.header || '';
     docFooter.innerHTML = rec.footer || '';
-    $('#docName').value = rec.name || 'Dokumen Tanpa Judul';
+    $('#docName').value = rec.name || 'Document1';
     if(rec.hfOn){
       docHeader.classList.toggle('off', !rec.hfOn.h);
       docFooter.classList.toggle('off', !rec.hfOn.f);
@@ -4681,7 +4676,7 @@ function init(){
   updateToolbar();
   refreshFootnotes();
   drawRuler();
-  $('#saveState').textContent = settings.autosave ? 'Tersimpan otomatis' : 'Siap';
+  $('#saveState').textContent = settings.autosave ? 'Autosaved' : 'Ready';
 
   editor.focus();
   const r = document.createRange();
